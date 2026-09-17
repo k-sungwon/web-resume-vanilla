@@ -75,3 +75,28 @@ Repeatedly connecting concrete project work to the full request path builds a du
 ### Trade-offs
 
 Milestone reviews become slightly longer, but implementation remains focused. Deep network engineering, distributed systems, and framework internals are deferred.
+
+⸻
+
+## 2026-09-17 — Web evolution is studied as a multi-domain atlas
+
+### Decision
+
+Cover the evolution of the whole web system rather than treating React, build tools, GitHub Actions, and Vercel as the complete history.
+
+### Context
+
+The learner wants to understand why components and technologies across frontend, backend, networking, security, data, deployment, and operations appeared and how they interact.
+
+### Alternatives
+
+* Teach a short linear history centered on frontend frameworks.
+* List modern technologies by category without their causes and trade-offs.
+
+### Why
+
+A multi-domain atlas preserves the relationships between layers. The repeated need → solution → limitation → newer approach → trade-off frame explains both technological change and why simpler or older approaches remain valid.
+
+### Trade-offs
+
+The total map is much larger than this portfolio. Only branches anchored to the current milestone are studied immediately; the rest remain explicit follow-up topics instead of blocking implementation.

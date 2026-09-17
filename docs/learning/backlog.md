@@ -29,7 +29,16 @@ Interesting or useful concepts that are outside the current project path.
 * Reverse proxies, load balancers, API gateways, containers, and orchestration
 * Advanced web security: CSP, CSRF, credential storage, and threat modeling
 * Observability, reliability, scaling, and distributed-systems trade-offs
-* Historical progression from static sites and server rendering through AJAX, SPA frameworks, build tools, CI/CD, and managed platforms
+* Web Evolution Atlas: each major web area studied as need → earlier solution → limitation → newer solution → benefit → trade-off → cases where the simpler approach still wins
+  * Documents and rendering
+  * Browser programming and browser capabilities
+  * JavaScript modules, packages, build tools, and source languages
+  * CSS layout and organization
+  * APIs and real-time communication
+  * Backend architecture and data storage
+  * Identity, browser security, and transport security
+  * Hosting, traffic management, deployment, and infrastructure
+  * Operations, observability, performance, testing, and collaboration
 
 ⸻
 

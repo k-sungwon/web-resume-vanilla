@@ -239,33 +239,59 @@ source code
 
 Execution location and trust boundary, not programming language, determine whether a responsibility belongs in the frontend or backend.
 
-### Historical problem-to-solution comparisons
+### Web Evolution Atlas
 
-Learning checkpoints connect technologies to the problems that motivated them:
+The history portion is not limited to React, build tools, GitHub Actions, or Vercel. Those are examples within a broader map spanning the complete web system. The atlas covers the following development lines as they become relevant to the project:
 
-* Static documents → dynamic server rendering for changing/user-specific data
-* Full-page navigation → AJAX/`fetch` for partial data updates
-* Cross-browser DOM boilerplate → jQuery, followed by improved browser standards
-* Growing imperative DOM synchronization → component-based declarative frameworks such as React
-* Many files and non-browser source languages → modules, transpilers, bundlers, and build tools
-* Large JavaScript systems → TypeScript for earlier type feedback
-* Manual server/FTP releases → reproducible CI/CD such as GitHub Actions
-* Operational hosting burden → managed deployment platforms such as Vercel
-* Distance and traffic concentration → caching, CDNs, load balancers, and later API gateways
-* Plaintext transport → TLS-protected HTTPS
+| Area | Evolution line to understand |
+| --- | --- |
+| Documents and rendering | static documents → CGI/server-generated pages → server templates → AJAX-enhanced pages → SPAs → SSR/SSG and hydration → islands, streaming, and server-component approaches |
+| Browser programming | inline/global scripts → DOM APIs → cross-browser libraries such as jQuery → standardized browser APIs → component/state-driven UI frameworks |
+| JavaScript organization | copied scripts → package registries/managers → CommonJS/AMD → ES Modules → bundlers, tree shaking, and code splitting |
+| Source languages | browser-native JavaScript → transpiled newer syntax → TypeScript and other compile-to-JavaScript tools |
+| CSS layout and organization | tables/positioning → floats → Flexbox/Grid → naming methodologies and preprocessors → CSS Modules/CSS-in-JS/utility approaches |
+| Browser capabilities | proprietary plugins and browser-specific APIs → standardized HTML5 platform APIs → progressive enhancement, PWAs, service workers, and WebAssembly |
+| Client/server communication | HTML forms and full navigation → XMLHttpRequest/AJAX → `fetch` and REST conventions → GraphQL/RPC → WebSocket, server-sent events, and streaming where required |
+| Backend structure | simple scripts → monolithic applications → layered/modular monoliths → services and microservices → functions/serverless and edge execution |
+| Data storage | files → relational databases and transactions → replication/indexing → caches/search systems → NoSQL and event/stream systems for different data and scale needs |
+| Identity and security | plaintext HTTP/basic credentials → TLS/HTTPS → secure cookies and server sessions → token standards, OAuth/OIDC, MFA, and zero-trust-oriented controls |
+| Browser security | unrestricted assumptions → same-origin policy → CORS → CSP, secure cookie attributes, sandboxing, and modern isolation policies |
+| Hosting and traffic | one origin server → reverse proxies and caches → CDNs → load balancers and autoscaling → API gateways and edge platforms |
+| Deployment | manual file copy/FTP → scripted releases → build servers and CI/CD → infrastructure as code → containers/orchestration → managed and serverless platforms |
+| Operations | manual inspection → structured/centralized logs → metrics and alerting → distributed tracing and unified observability |
+| Performance | unoptimized files → compression/minification → caching and image formats → lazy loading, code splitting, preload priorities, and Core Web Vitals-driven work |
+| Testing and quality | manual browser checks → unit/integration tests → browser E2E and contract tests → visual, accessibility, performance, and production checks |
+| Collaboration | local copies → centralized version control → distributed Git workflows → pull requests, automated checks, preview environments, and protected releases |
+| Architecture and delivery ownership | separate frontend/backend servers → full-stack frameworks and backend-for-frontend patterns → platform engineering and managed developer platforms |
+
+These lines are not universal replacements or a single ladder where newer always means better. Each topic uses the same comparison frame:
+
+```text
+original need
+→ earlier solution
+→ constraint or failure that appeared
+→ newer approach
+→ benefit gained
+→ complexity or trade-off introduced
+→ situations where the earlier approach is still the better choice
+```
+
+The portfolio supplies concrete anchors for the atlas. Its plain scripts anchor the script/module/build-tool line, GitHub API anchors client/server communication and browser security, and GitHub Pages anchors static hosting, DNS, TLS, CDN, and deployment. Topics without a concrete project anchor stay in the backlog until a later project needs them.
 
 ### Repeated checkpoint questions
 
 1. Where does the code just written execute?
 2. Which layers does it cross before it becomes visible or usable?
 3. What failure occurs if a component is absent?
-4. Which later tool or framework addresses the problem at greater scale?
+4. Which later tool, standard, framework, or infrastructure approach addresses the problem at greater scale?
+5. What cost or new complexity does that later approach introduce?
+6. When is the older or simpler approach still the better choice?
 
 ### Depth control
 
 * NOW: details required to implement the current milestone.
 * CHECKPOINT: how the completed feature fits into the end-to-end web path.
-* LATER: deeper browser internals, distributed infrastructure, framework design, and server operations that do not unblock this release.
+* LATER: unencountered branches of the Web Evolution Atlas, deeper browser internals, distributed infrastructure, framework design, and server operations that do not unblock this release.
 
 ## 12. Documentation Rules During Implementation
 
@@ -278,4 +304,4 @@ Learning checkpoints connect technologies to the problems that motivated them:
 
 ## 13. Project Completion Criteria
 
-The project is complete when the required site behavior works locally and on GitHub Pages, the documented checks pass, personal content replaces samples, and the learner can explain the end-to-end request path and at least three event → state → render flows in this codebase.
+The project is complete when the required site behavior works locally and on GitHub Pages, the documented checks pass, personal content replaces samples, and the learner can explain the end-to-end request path, at least three event → state → render flows in this codebase, and the need/limitation/trade-off chain for the evolution branches encountered during the project.

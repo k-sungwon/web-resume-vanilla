@@ -16,6 +16,7 @@ Completed
 * Feature-separated JavaScript architecture selected
 * Implementation order, state flows, and verification strategy designed
 * End-to-end Web System Learning Track designed
+* Multi-domain Web Evolution Atlas added to the learning design
 
 Next
 
@@ -35,6 +36,7 @@ Learning CHECKPOINT
 * Why the first release uses feature-separated deferred scripts
 * Why this vanilla project has no build step
 * How milestone learning connects to the complete web request path
+* How to compare technology evolution without assuming newer is always better
 
 Learning LATER
 
