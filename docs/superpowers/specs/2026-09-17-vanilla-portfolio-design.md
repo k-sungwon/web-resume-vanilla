@@ -15,7 +15,7 @@ The first release prioritizes the mission's required behavior and the learning p
 * Handle the required `click`, `submit`, `scroll`, and `input` events, including `preventDefault` where native navigation/submission must be replaced.
 * Support current Chrome and mobile, tablet, and desktop layouts.
 * Deploy the finished static site with GitHub Pages.
-* Begin with replaceable sample portfolio content. Personal content and the GitHub username are substituted near the end.
+* Use replaceable sample portfolio content for the first release. Personal content and the GitHub username may be substituted afterward as a learner-led code-reading exercise.
 
 ## 3. Scope
 
@@ -55,8 +55,7 @@ web_resume_vanilla/
 │   ├── contact.js
 │   └── projects.js
 ├── images/
-│   ├── profile-placeholder.webp
-│   └── project-placeholder.webp
+│   └── profile-placeholder.svg
 ├── docs/
 │   ├── mission.md
 │   ├── learning/
@@ -159,7 +158,7 @@ Scroll-to-top visibility and observed reveal entries are derived directly from b
 7. Implement form state, validation, and rendering.
 8. Implement GitHub API request states and rendering.
 9. Run integrated responsive, accessibility, keyboard, network, and console verification.
-10. Replace sample content, complete README/screenshots, deploy to GitHub Pages, and verify the deployed site.
+10. Confirm sample content is easy to replace, complete README/screenshots, deploy to GitHub Pages, and verify the deployed site.
 
 The API work follows basic DOM/event work so asynchronous state adds one new concept at a time.
 
@@ -325,4 +324,4 @@ Roadmap completion does not mean shallow checkbox completion. A topic is assigne
 
 ## 13. Project Completion Criteria
 
-The portfolio project is complete when the required site behavior works locally and on GitHub Pages, the documented checks pass, personal content replaces samples, and the learner can explain the end-to-end request path, at least three event → state → render flows in this codebase, and the need/limitation/trade-off chain for the evolution branches encountered during the project. Completion of this portfolio advances, but does not by itself complete, the full Frontend Roadmap curriculum.
+The portfolio project is complete when the required site behavior works locally and on GitHub Pages with clearly replaceable sample content, the documented checks pass, and the learner can explain the end-to-end request path, at least three event → state → render flows in this codebase, and the need/limitation/trade-off chain for the evolution branches encountered during the project. Replacing samples with personal content is the first learner-led post-completion exercise. Completion of this portfolio advances, but does not by itself complete, the full Frontend Roadmap curriculum.

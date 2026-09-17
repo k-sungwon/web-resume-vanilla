@@ -6,7 +6,7 @@ Project Setup / Architecture
 
 Current Task
 
-Review and approve the written architecture and learning design.
+Review the detailed implementation plan and choose the execution mode.
 
 Completed
 
@@ -18,10 +18,11 @@ Completed
 * End-to-end Web System Learning Track designed
 * Multi-domain Web Evolution Atlas added to the learning design
 * Complete Frontend Roadmap adopted as a multi-project learning curriculum
+* Detailed portfolio implementation plan written and self-reviewed
 
 Next
 
-1. Create and review the detailed implementation plan
+1. Choose plan execution mode
 2. Create the project skeleton and verify file loading
 3. Build the semantic HTML milestone
 4. Create the initial Frontend Roadmap learning tracker at the appropriate plan checkpoint
