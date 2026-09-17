@@ -100,3 +100,28 @@ A multi-domain atlas preserves the relationships between layers. The repeated ne
 ### Trade-offs
 
 The total map is much larger than this portfolio. Only branches anchored to the current milestone are studied immediately; the rest remain explicit follow-up topics instead of blocking implementation.
+
+⸻
+
+## 2026-09-17 — Use the complete Frontend Roadmap as a long-term curriculum
+
+### Decision
+
+Track every topic in the current Frontend Roadmap over multiple projects while keeping portfolio completion and roadmap completion as separate goals.
+
+### Context
+
+The learner wants complete coverage rather than a hand-picked subset, but many roadmap topics need different project contexts and cannot be learned deeply through one static portfolio.
+
+### Alternatives
+
+* Cover only topics encountered in the current project.
+* Attempt to add every roadmap technology to this portfolio.
+
+### Why
+
+Separate curriculum tracking provides full visibility without creating an over-engineered portfolio. Topics can be assigned to projects that contain a real problem for them to solve.
+
+### Trade-offs
+
+Reaching the final curriculum goal requires follow-up projects and periodic roadmap reviews. In return, progress reflects understanding and application rather than superficial checklist completion.

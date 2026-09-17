@@ -39,6 +39,10 @@ Interesting or useful concepts that are outside the current project path.
   * Identity, browser security, and transport security
   * Hosting, traffic management, deployment, and infrastructure
   * Operations, observability, performance, testing, and collaboration
+* Complete Frontend Roadmap curriculum
+  * Preserve the reviewed roadmap topic list/version in a local tracker.
+  * Track each topic through NOT STARTED, UNDERSTOOD, PRACTICED, APPLIED, and EXPLAINED.
+  * Assign topics outside the vanilla portfolio to later projects that provide a genuine use case.
 
 ⸻
 

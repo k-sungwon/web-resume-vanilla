@@ -293,10 +293,31 @@ The portfolio supplies concrete anchors for the atlas. Its plain scripts anchor 
 * CHECKPOINT: how the completed feature fits into the end-to-end web path.
 * LATER: unencountered branches of the Web Evolution Atlas, deeper browser internals, distributed infrastructure, framework design, and server operations that do not unblock this release.
 
+### Frontend Roadmap long-term coverage
+
+The complete roadmap at `https://roadmap.sh/frontend` is the long-term frontend curriculum, not the implementation scope of this single portfolio. Every roadmap topic should eventually reach at least conceptual and historical understanding; core topics should also be practiced and applied in an appropriate project.
+
+Roadmap progress is tracked separately from feature completion using these states:
+
+| State | Meaning |
+| --- | --- |
+| NOT STARTED | The topic has not been introduced. |
+| UNDERSTOOD | The learner can explain its purpose, origin, and basic mechanism. |
+| PRACTICED | The learner completed a focused exercise. |
+| APPLIED | The learner used and verified it in a real project. |
+| EXPLAINED | The learner can compare alternatives, trade-offs, and appropriate use cases without prompts. |
+
+The roadmap is periodically updated, so the learning records preserve the topic list/version reviewed at a checkpoint instead of assuming the external page is permanently fixed.
+
+This project directly applies internet/web basics, HTML, CSS, JavaScript, DOM/events, responsive design, accessibility, Git/GitHub, REST API consumption, browser developer tools, introductory security/performance/SEO, and static deployment. Package management, ES Modules, build tools, TypeScript, React, automated testing, advanced performance/security, SSR/SSG, CI/CD, and larger frontend architecture require later exercises or projects.
+
+Roadmap completion does not mean shallow checkbox completion. A topic is assigned to the smallest project that provides a genuine reason to use it, and the learner records why it was chosen, what problem it solved, and what cost it introduced.
+
 ## 12. Documentation Rules During Implementation
 
 * Update `docs/learning/status.md` at the end of each work session.
 * Record milestone checkpoints in `docs/learning/checkpoints.md`.
+* Track the external Frontend Roadmap curriculum separately from the portfolio feature checklist.
 * Put important but non-blocking discoveries in `docs/learning/backlog.md`.
 * Record architectural decisions in `docs/learning/decisions.md`.
 * Keep explanations concise during implementation and return to the end-to-end web model at meaningful milestones.
@@ -304,4 +325,4 @@ The portfolio supplies concrete anchors for the atlas. Its plain scripts anchor 
 
 ## 13. Project Completion Criteria
 
-The project is complete when the required site behavior works locally and on GitHub Pages, the documented checks pass, personal content replaces samples, and the learner can explain the end-to-end request path, at least three event → state → render flows in this codebase, and the need/limitation/trade-off chain for the evolution branches encountered during the project.
+The portfolio project is complete when the required site behavior works locally and on GitHub Pages, the documented checks pass, personal content replaces samples, and the learner can explain the end-to-end request path, at least three event → state → render flows in this codebase, and the need/limitation/trade-off chain for the evolution branches encountered during the project. Completion of this portfolio advances, but does not by itself complete, the full Frontend Roadmap curriculum.

@@ -17,13 +17,14 @@ Completed
 * Implementation order, state flows, and verification strategy designed
 * End-to-end Web System Learning Track designed
 * Multi-domain Web Evolution Atlas added to the learning design
+* Complete Frontend Roadmap adopted as a multi-project learning curriculum
 
 Next
 
-1. User reviews and approves the written design
-2. Create a detailed implementation plan
-3. Create the project skeleton and verify file loading
-4. Build the semantic HTML milestone
+1. Create and review the detailed implementation plan
+2. Create the project skeleton and verify file loading
+3. Build the semantic HTML milestone
+4. Create the initial Frontend Roadmap learning tracker at the appropriate plan checkpoint
 
 Learning NOW
 
@@ -43,3 +44,4 @@ Learning LATER
 * ES Modules and dependency design
 * Build tools, transpilation, and bundling
 * Framework, deployment-platform, and infrastructure evolution
+* Frontend Roadmap topics assigned to later focused projects
