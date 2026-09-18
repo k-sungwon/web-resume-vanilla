@@ -6,7 +6,7 @@ Milestone 4 / State and Forms
 
 Current Task
 
-Implement persistent theme state.
+Implement contact form state and validation.
 
 Completed
 
@@ -32,11 +32,14 @@ Completed
 * Smooth internal navigation and automatic menu closing implemented
 * Header, scroll-top, and Intersection Observer behaviors verified
 * Milestone 3 delivered as a guided explanation
+* Light/dark theme state and one-path rendering implemented
+* Theme preference persistence verified across reloads
+* Browser-storage trust boundary explained
 
 Next
 
-1. Implement and verify persistent theme state
-2. Implement contact form state and validation
+1. Implement contact form state and validation
+2. Verify empty, malformed, and valid submissions
 3. Explain state → render and client/server validation boundaries
 4. Integrate GitHub API request states
 

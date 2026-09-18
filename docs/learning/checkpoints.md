@@ -178,3 +178,47 @@ This imperative style becomes harder to coordinate as UI grows because every sta
 
 * Theme state introduces persistence and an explicit render function in the next milestone.
 * Larger applications need stronger rules for coordinating state shared by multiple components.
+
+⸻
+
+## Milestone 4A — Persistent theme state
+
+### What I Built
+
+* Initialized a `light` or `dark` theme from `localStorage` with a safe light fallback.
+* Rendered the state through `data-theme`, the toggle icon, and the accessible next-action label.
+* Persisted each toggle and verified both dark and light restoration after reload.
+* Kept the current-page theme functional when browser storage is unavailable.
+
+### Core Concepts
+
+* State is the current value the UI should represent.
+* A render function maps one state to every related DOM detail.
+* Persistence lets a later page load reconstruct state.
+* Browser storage is controlled by the user and cannot protect secrets.
+
+### Project Connection
+
+* `getInitialTheme` validates stored input and chooses the initial state.
+* `setTheme` changes state, renders it, and persists it.
+* `renderTheme` updates the root `data-theme`, icon, and accessible label together.
+* CSS theme variables turn one root attribute change into a site-wide visual change.
+
+### Browser / CS Connection
+
+`localStorage` is synchronous key/value storage scoped to an origin. On reload, JavaScript runs again, reads the stored string, reconstructs state, and updates the DOM. The CSS cascade then resolves the dark or light custom properties and triggers new painting.
+
+### React Connection
+
+The explicit `theme` variable resembles component state, while `renderTheme` resembles the view produced from that state. React automates rerender scheduling, but persistence still requires an external browser API and validation when data is restored.
+
+### Guided Explanation
+
+The button does not directly toggle unrelated DOM details one by one. It chooses the next state and passes it through one render path, keeping the root attribute, icon, and label consistent. This is the smallest form of state-driven UI.
+
+`localStorage` improves continuity but not trust. Any browser user or injected script can inspect or modify it, so it is suitable for preferences and drafts, not passwords, API secrets, or authoritative permissions.
+
+### Remaining Gaps
+
+* Form state will add multiple values and validation errors.
+* Shared state, storage events across tabs, and system-theme detection remain later topics.
