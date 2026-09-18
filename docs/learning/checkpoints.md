@@ -313,3 +313,47 @@ The browser/API boundary is also a trust boundary. Repository descriptions are e
 
 * Request cancellation, timeout policy, pagination, caching, and authenticated rate limits belong to later API work.
 * DNS, TLS, HTTP versions, proxies, CDNs, and browser networking will be revisited in the end-to-end web-system track.
+
+⸻
+
+## Milestone 6 — Integrated release QA
+
+### What I Built
+
+* Wrote the operational README with local execution, replacement points, thresholds, verification, and deployment placeholders.
+* Connected completed project evidence to honest Frontend Roadmap statuses and recorded the next gap for each area.
+* Rechecked syntax, whitespace, keyboard order, color contrast, responsive layouts, request states, external-link safety, and required semantics.
+* Ran a local Lighthouse mobile audit: Performance 99, Accessibility 100, and SEO 100.
+
+### Core Concepts
+
+* Verification needs multiple layers because valid syntax does not prove correct behavior, accessibility, or network outcomes.
+* Responsive QA checks the same document under different constraints instead of creating separate mobile and desktop sites.
+* Accessibility combines semantic structure, keyboard operation, visible focus, state communication, contrast, and motion preferences.
+* Performance measurements depend partly on the hosting server, cache policy, connection, and device—not only source size.
+
+### Project Connection
+
+* `node --check` covers JavaScript parsing while browser checks cover real DOM and event behavior.
+* The accessibility tree confirmed landmarks, headings, labels, link names, and control names.
+* The CSS color pairs all exceeded WCAG AA normal-text contrast, and Lighthouse reported no automated accessibility failure.
+* `README.md` records the facts required to run, customize, verify, and later deploy the site.
+
+### Browser / CS Connection
+
+The browser converts the same HTML, CSS, and JavaScript into different layouts according to viewport and user preferences. Lighthouse observes the resulting network waterfall, rendering timeline, DOM, and accessibility information. Its performance result includes server behavior, which is why a Python development server result must not be treated as the final production measurement.
+
+### React Connection
+
+Framework projects need the same release layers. React can organize UI code, but it does not automatically guarantee semantic markup, keyboard access, responsive CSS, safe network states, caching, or fast rendering.
+
+### Guided Explanation
+
+The release audit moves outward from code to user experience: syntax verifies that files parse; DOM inspection verifies structure; interaction tests verify event/state/render flows; responsive and keyboard checks verify alternate use conditions; Network and Lighthouse checks verify resource delivery and browser-level quality signals.
+
+The local score was 99/100/100. The remaining Lighthouse opportunities were cache lifetime, document latency, the dependency tree, and render-blocking CSS. The first two are primarily properties of the temporary local server, while the stylesheet is intentionally render-blocking so the page does not flash unstyled content. Those trade-offs should be reassessed using the production Pages URL instead of adding premature build tooling.
+
+### Remaining Gaps
+
+* Real screen-reader testing and broader browser/device coverage remain future quality work.
+* Production caching, HTTPS, repository subpath behavior, and public availability require the deployment milestone.

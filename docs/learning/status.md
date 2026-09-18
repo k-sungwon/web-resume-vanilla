@@ -2,11 +2,11 @@ Project Learning Status
 
 Current Milestone
 
-Milestone 6 / Integrated QA and documentation
+Milestone 7 / GitHub Pages deployment
 
 Current Task
 
-Run integrated responsive, accessibility, interaction, and code-quality verification.
+Prepare and verify the public GitHub Pages release.
 
 Completed
 
@@ -43,25 +43,30 @@ Completed
 * Remote text escaping and repository URL allow-listing implemented
 * Real success response plus controlled empty and error paths verified in the browser
 * Browser/API/backend boundary and HTTP-versus-network success explained
+* Operational README and customization guide written
+* Frontend Roadmap statuses reconciled with concrete evidence
+* Keyboard order and WCAG AA color contrast verified
+* Local Lighthouse audit completed: Performance 99, Accessibility 100, SEO 100
+* Integrated local release candidate verified
 
 Next
 
-1. Run integrated browser QA at 320px, 768px, and desktop widths
-2. Audit semantics, keyboard interaction, focus, motion preference, and external links
-3. Complete README run/deployment instructions and learning evidence
-4. Perform final verification and review
+1. Verify branch, remote, and release preconditions
+2. Publish the approved release through GitHub Pages
+3. Verify HTTPS, repository-relative assets, API, and interactions in production
+4. Record the real URL and production screenshots
 
 Learning NOW
 
-* Integrated browser verification and DevTools evidence
-* Accessibility and responsive regression checks
-* Static-site run, deployment, and cache behavior
+* Static hosting, GitHub Pages, and production HTTPS
+* Repository path, relative asset requests, and cache headers
+* Local development server versus production hosting
 
 Learning CHECKPOINT
 
-* Source code → local server → browser rendering pipeline
-* Semantic, visual, behavioral, and network verification layers
-* What static deployment provides and what it does not provide
+* Git commit → GitHub repository → Pages deployment → public browser
+* DNS → TLS → HTTP → browser resource discovery and rendering
+* What static hosting provides and what still needs a backend
 
 Learning LATER
 
