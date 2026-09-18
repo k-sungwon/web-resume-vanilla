@@ -277,14 +277,18 @@ original need
 
 The portfolio supplies concrete anchors for the atlas. Its plain scripts anchor the script/module/build-tool line, GitHub API anchors client/server communication and browser security, and GitHub Pages anchors static hosting, DNS, TLS, CDN, and deployment. Topics without a concrete project anchor stay in the backlog until a later project needs them.
 
-### Repeated checkpoint questions
+### Repeated checkpoint teaching frame
 
-1. Where does the code just written execute?
-2. Which layers does it cross before it becomes visible or usable?
-3. What failure occurs if a component is absent?
-4. Which later tool, standard, framework, or infrastructure approach addresses the problem at greater scale?
-5. What cost or new complexity does that later approach introduce?
-6. When is the older or simpler approach still the better choice?
+At each milestone, the Learning Manager explains rather than quizzes:
+
+1. Where the code just written executes.
+2. Which layers it crosses before it becomes visible or usable.
+3. What failure occurs if a component is absent.
+4. Which later tool, standard, framework, or infrastructure approach addresses the problem at greater scale.
+5. What cost or new complexity that later approach introduces.
+6. When the older or simpler approach is still the better choice.
+
+The explanation does not block the next implementation step. Understanding questions are asked only when the learner explicitly requests them.
 
 ### Depth control
 
@@ -320,6 +324,7 @@ Roadmap completion does not mean shallow checkbox completion. A topic is assigne
 * Put important but non-blocking discoveries in `docs/learning/backlog.md`.
 * Record architectural decisions in `docs/learning/decisions.md`.
 * Keep explanations concise during implementation and return to the end-to-end web model at meaningful milestones.
+* Deliver checkpoints as concise guided explanations, not mandatory learner quizzes.
 * Do not invent the currently missing `docs/learning/manager.md`; incorporate it if the project later provides the authoritative file.
 
 ## 13. Project Completion Criteria

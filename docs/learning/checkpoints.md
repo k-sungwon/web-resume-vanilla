@@ -85,3 +85,50 @@ React will later create and update DOM from component descriptions, but semantic
 * CSSOM, layout, paint, and compositing will be connected during the styling milestone.
 * Event, state, and DOM update flows begin with the interaction milestone.
 * Reinforce the difference between an HTML reference URL and the separately fetched response body.
+
+⸻
+
+## Milestone 2 — CSS and responsive layout
+
+### What I Built
+
+* Defined reusable light/dark color, spacing, radius, shadow, width, and header tokens with CSS custom properties.
+* Built the mobile-first base layout, accessible focus styles, buttons, skills, project state, form, footer, and reduced-motion rules.
+* Used Flexbox for one-dimensional navigation and Grid for responsive project cards and the tablet About layout.
+* Added required breakpoints at 768px and 1024px.
+* Removed a 320px horizontal-overflow bug caused by a fixed `body` minimum width.
+
+### Core Concepts
+
+* The cascade and custom properties allow shared design decisions to flow through many selectors.
+* Mobile-first CSS starts with the smallest layout and adds changes as space becomes available.
+* Flexbox controls alignment primarily along one axis; Grid controls rows and columns together.
+* Responsive rules change layout based on available viewport width rather than device names.
+
+### Project Connection
+
+* `:root` and `[data-theme='dark']` define the visual tokens used by all components.
+* `.site-nav` and `.nav-links` use Flexbox.
+* `.project-grid` uses `repeat(auto-fit, minmax(...))` so card count adapts without per-device columns.
+* The 768px breakpoint exposes desktop navigation and the About grid; 1024px increases large-screen spacing.
+
+### Browser / CS Connection
+
+The browser downloads CSS separately, parses it into the CSSOM, combines applicable DOM and CSSOM information for rendering, calculates element geometry during layout, paints visual pixels, and composites layers for the final screen. A viewport change can invalidate style and layout calculations without changing the HTML.
+
+### React Connection
+
+React may decide which elements and classes exist, but the browser still performs the same cascade, layout, paint, and compositing work. Component frameworks do not replace CSS fundamentals.
+
+### Guided Explanation
+
+Navigation arranges logo, links, and controls mainly along one horizontal axis, so Flexbox provides the clearest alignment model. Project cards must form both columns and rows while changing their count according to available width, so Grid's `auto-fit` and `minmax` model fits that responsibility.
+
+The unwrapped CSS rules target the smallest screens first. At 768px, enough horizontal space exists to replace the hamburger layout with a visible row menu and to divide About into two columns. At 1024px, only spacing and large-screen proportions expand. This avoids building a desktop layout and then repeatedly undoing it for smaller screens.
+
+The browser parses HTML into the DOM and CSS into the CSSOM. It combines the relevant structure and computed styles, calculates geometry during layout, paints visual details, and composites the result into the final screen. Changing viewport width can recalculate styles and layout without changing the HTML.
+
+### Remaining Gaps
+
+* Reinforce cascade specificity when interaction classes begin changing presentation.
+* Connect layout/paint updates to JavaScript class changes in the next milestone.

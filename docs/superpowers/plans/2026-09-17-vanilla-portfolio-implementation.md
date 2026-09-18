@@ -21,6 +21,7 @@
 * Treat browser code as public: store no secret or privileged credential.
 * Keep the first release to required mission behavior; record optional features in the backlog.
 * Finish each task with its Learning Checkpoint, status update, verification, and focused commit.
+* Present Learning Checkpoints as guided explanations and continue without waiting for learner answers unless the learner asks for questions.
 
 ## File Map
 
@@ -131,9 +132,9 @@ Create `docs/learning/frontend-roadmap.md` with source URL, snapshot date `2026-
 
 Open the local site and verify all six sections, footer, local profile image, labels, and anchor destinations exist. In DevTools Network confirm HTML, CSS, five scripts, and SVG return 200. Run `rg -n "onclick=|style=|\bvar\b" index.html css js`; expected: no matches.
 
-- [ ] **Step 7: Run Learning Checkpoint 0/1 and commit**
+- [ ] **Step 7: Deliver Learning Checkpoint 0/1 and commit**
 
-Record answers in `docs/learning/checkpoints.md`: what each file does, why HTTP serving differs from opening a file directly, where each asset request appears, and why semantic elements/labels matter. Update status, then commit with `feat: add semantic portfolio foundation`.
+Record a concise guided explanation in `docs/learning/checkpoints.md`: what each file does, why HTTP serving differs from opening a file directly, where each asset request appears, and why semantic elements/labels matter. Update status, then commit with `feat: add semantic portfolio foundation`.
 
 ---
 
@@ -175,9 +176,9 @@ Add hover transitions only for devices that support hover. Under `prefers-reduce
 
 Confirm no horizontal scrolling at 320px, mobile menu hidden by default below 768px, desktop menu visible at 768px and above, section content remains readable at 1024px+, and the empty project container already uses the future grid width safely.
 
-- [ ] **Step 5: Run Learning Checkpoint 2 and commit**
+- [ ] **Step 5: Deliver Learning Checkpoint 2 and commit**
 
-Record why navigation uses Flexbox, projects use Grid, mobile rules come first, and CSS becomes CSSOM/layout/paint. Update status and commit with `feat: add responsive visual system`.
+Explain why navigation uses Flexbox, projects use Grid, mobile rules come first, and CSS becomes CSSOM/layout/paint. Record the explanation, update status, and commit with `feat: add responsive visual system`.
 
 ---
 

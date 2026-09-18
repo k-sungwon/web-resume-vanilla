@@ -125,3 +125,28 @@ Separate curriculum tracking provides full visibility without creating an over-e
 ### Trade-offs
 
 Reaching the final curriculum goal requires follow-up projects and periodic roadmap reviews. In return, progress reflects understanding and application rather than superficial checklist completion.
+
+⸻
+
+## 2026-09-18 — Learning checkpoints use guided explanations
+
+### Decision
+
+Deliver milestone learning as concise explanations and continue implementation without requiring the learner to answer checkpoint questions.
+
+### Context
+
+The learner wants to study while completing the project, but quiz-style pauses interrupt the development flow.
+
+### Alternatives
+
+* Require short learner answers before every milestone commit.
+* Remove learning checkpoints entirely.
+
+### Why
+
+Guided explanations preserve the connection between implementation and fundamentals while keeping development moving. Questions remain available when the learner explicitly requests them.
+
+### Trade-offs
+
+The workflow loses mandatory retrieval practice, but gains continuity and lower interruption. Learning records preserve the explanations for later review.
