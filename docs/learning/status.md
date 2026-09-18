@@ -2,11 +2,11 @@ Project Learning Status
 
 Current Milestone
 
-Project Setup / Architecture
+Milestone 2 / CSS and Responsive Layout
 
 Current Task
 
-Review the detailed implementation plan and choose the execution mode.
+Build the mobile-first visual system and responsive layout.
 
 Completed
 
@@ -19,26 +19,30 @@ Completed
 * Multi-domain Web Evolution Atlas added to the learning design
 * Complete Frontend Roadmap adopted as a multi-project learning curriculum
 * Detailed portfolio implementation plan written and self-reviewed
+* Feature branch created for implementation
+* Semantic HTML structure and replaceable sample content created
+* External CSS and five deferred feature scripts connected
+* Local profile placeholder and Frontend Roadmap tracker created
+* Milestone 0/1 browser verification and Learning Checkpoint completed
 
 Next
 
-1. Choose plan execution mode
-2. Create the project skeleton and verify file loading
-3. Build the semantic HTML milestone
-4. Create the initial Frontend Roadmap learning tracker at the appropriate plan checkpoint
+1. Build the mobile-first visual system
+2. Add Flexbox navigation and Grid project layout
+3. Add 768px and 1024px responsive changes
+4. Verify layout at 320px, 768px, and 1024px
 
 Learning NOW
 
-* Project scope and responsibility boundaries
-* End-to-end path from source code to browser rendering
-* Frontend, backend, network, and infrastructure boundaries
+* CSS custom properties and cascade
+* Mobile-first responsive rules
+* Flexbox and Grid responsibility boundaries
 
 Learning CHECKPOINT
 
-* Why the first release uses feature-separated deferred scripts
-* Why this vanilla project has no build step
-* How milestone learning connects to the complete web request path
-* How to compare technology evolution without assuming newer is always better
+* CSSOM, layout, paint, and compositing overview
+* Why mobile-first rules reduce override complexity
+* Why navigation uses Flexbox and project cards use Grid
 
 Learning LATER
 
