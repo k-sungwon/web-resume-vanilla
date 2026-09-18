@@ -2,11 +2,11 @@ Project Learning Status
 
 Current Milestone
 
-Milestone 2 / CSS and Responsive Layout
+Milestone 4 / State and Forms
 
 Current Task
 
-Commit the verified responsive visual system, then begin navigation and scroll interactions.
+Implement persistent theme state.
 
 Completed
 
@@ -28,25 +28,29 @@ Completed
 * Flexbox navigation and responsive Grid contracts implemented
 * 768px and 1024px breakpoints verified in the browser
 * 320px horizontal overflow diagnosed and fixed
+* Mobile navigation event and accessibility state implemented
+* Smooth internal navigation and automatic menu closing implemented
+* Header, scroll-top, and Intersection Observer behaviors verified
+* Milestone 3 delivered as a guided explanation
 
 Next
 
-1. Commit the responsive visual system
-2. Implement navigation and scroll interactions
-3. Verify event → state/class → DOM → paint flows
-4. Deliver the interaction milestone as a guided explanation
+1. Implement and verify persistent theme state
+2. Implement contact form state and validation
+3. Explain state → render and client/server validation boundaries
+4. Integrate GitHub API request states
 
 Learning NOW
 
-* CSS custom properties and cascade
-* Mobile-first responsive rules
-* Flexbox and Grid responsibility boundaries
+* Explicit state and render functions
+* Browser `localStorage` persistence
+* Form values, validation errors, and accessible feedback
 
 Learning CHECKPOINT
 
-* CSSOM, layout, paint, and compositing overview
-* Why mobile-first rules reduce override complexity
-* Why navigation uses Flexbox and project cards use Grid
+* Event → state → render → DOM update
+* Why frontend storage cannot contain secrets
+* Why client-side validation cannot replace server validation
 
 Learning LATER
 

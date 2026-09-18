@@ -132,3 +132,49 @@ The browser parses HTML into the DOM and CSS into the CSSOM. It combines the rel
 
 * Reinforce cascade specificity when interaction classes begin changing presentation.
 * Connect layout/paint updates to JavaScript class changes in the next milestone.
+
+⸻
+
+## Milestone 3 — DOM and events
+
+### What I Built
+
+* Implemented mobile-menu open/close state with matching visual class, accessible label, and `aria-expanded` value.
+* Connected internal links to smooth section navigation and automatic menu closing.
+* Changed Header and scroll-top button classes at 60px and 300px scroll thresholds.
+* Revealed sections with Intersection Observer threshold `0.2` and a no-observer fallback.
+* Honored reduced-motion preference for programmatic scrolling.
+
+### Core Concepts
+
+* `querySelector` and `querySelectorAll` connect JavaScript to existing DOM nodes.
+* `addEventListener` registers a function to run when the browser reports an event.
+* State must be reflected in both visual classes and accessibility attributes.
+* Scroll position can be derived from browser state instead of stored separately.
+
+### Project Connection
+
+* `js/navigation.js` owns menu state and internal-link click handling.
+* `js/scroll.js` owns scroll-derived Header/top-button state and reveal observation.
+* `.active`, `.scrolled`, `.visible`, and `.reveal-ready` connect JavaScript decisions to CSS presentation.
+
+### Browser / CS Connection
+
+The browser dispatches a click or scroll event to registered listeners. JavaScript changes attributes or class tokens on DOM objects. Those changes can alter matched CSS rules, causing style recalculation and, when geometry or pixels change, layout and paint work.
+
+### React Connection
+
+This project performs state-to-DOM synchronization manually. React later lets a component describe UI from state and handles the DOM update step, but the underlying browser events, DOM, CSS, layout, and paint still exist.
+
+### Guided Explanation
+
+The hamburger click first reads the current `aria-expanded` value, computes the next boolean state, then sends that one state to `setMenuOpen`. That render function updates the `.active` class, `aria-expanded`, and screen-reader label together, preventing visible and accessible state from drifting apart.
+
+Scroll UI does not copy `scrollY` into a long-lived state object. Each scroll event derives whether thresholds have been crossed and toggles the corresponding classes. Intersection Observer replaces continuous manual position calculations for reveal effects by notifying the code only when an observed section crosses the configured visibility threshold.
+
+This imperative style becomes harder to coordinate as UI grows because every state change must update every related DOM detail. Component frameworks such as React arose partly to make state-to-view synchronization declarative, at the cost of framework runtime, conventions, and build complexity.
+
+### Remaining Gaps
+
+* Theme state introduces persistence and an explicit render function in the next milestone.
+* Larger applications need stronger rules for coordinating state shared by multiple components.
