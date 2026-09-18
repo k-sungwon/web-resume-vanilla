@@ -2,11 +2,11 @@ Project Learning Status
 
 Current Milestone
 
-Milestone 5 / Asynchronous API
+Milestone 6 / Integrated QA and documentation
 
 Current Task
 
-Implement GitHub API request states and project rendering.
+Run integrated responsive, accessibility, interaction, and code-quality verification.
 
 Completed
 
@@ -38,25 +38,30 @@ Completed
 * Contact values, errors, and submission state implemented
 * Empty, malformed-email, valid, and whitespace-normalized form paths verified
 * Client/server validation trust boundary explained
+* GitHub REST API loading, success, empty, and error states implemented
+* Retry behavior and rate-limit-specific feedback implemented
+* Remote text escaping and repository URL allow-listing implemented
+* Real success response plus controlled empty and error paths verified in the browser
+* Browser/API/backend boundary and HTTP-versus-network success explained
 
 Next
 
-1. Integrate GitHub API request states
-2. Render loading, success, empty, and error outcomes
-3. Add retry behavior and rate-limit-specific feedback
-4. Explain the frontend/API/backend request path
+1. Run integrated browser QA at 320px, 768px, and desktop widths
+2. Audit semantics, keyboard interaction, focus, motion preference, and external links
+3. Complete README run/deployment instructions and learning evidence
+4. Perform final verification and review
 
 Learning NOW
 
-* `fetch`, promises, and `async`/`await`
-* HTTP status, JSON parsing, and CORS
-* Loading, success, empty, and error state machines
+* Integrated browser verification and DevTools evidence
+* Accessibility and responsive regression checks
+* Static-site run, deployment, and cache behavior
 
 Learning CHECKPOINT
 
-* Browser → GitHub API frontend/backend boundary
-* Why HTTP success and network success are different checks
-* How retry re-enters the same request-state flow
+* Source code → local server → browser rendering pipeline
+* Semantic, visual, behavioral, and network verification layers
+* What static deployment provides and what it does not provide
 
 Learning LATER
 

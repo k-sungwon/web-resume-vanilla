@@ -28,9 +28,9 @@ React Connection
 
 How React abstracts or represents the same idea.
 
-Understanding Check
+Guided Explanation
 
-2–4 explanation questions.
+A concise explanation of the completed feature, its underlying mechanism, and its place in the wider web system. Checkpoints teach the concept directly and do not pause progress with quiz questions.
 
 Remaining Gaps
 
@@ -266,3 +266,50 @@ The browser is controlled by the user, so client validation can be disabled or b
 
 * Real submission, server validation, spam protection, and CSRF defenses remain outside the first release.
 * More complex forms may need debouncing, async validation, and richer error summaries.
+
+⸻
+
+## Milestone 5 — GitHub API and request states
+
+### What I Built
+
+* Requested six recently updated public repositories from the GitHub REST API.
+* Rendered loading, success, empty, general-error, and rate-limit-specific states.
+* Added a retry action that sends the request through the same state transition again.
+* Escaped remote text and restricted repository links to HTTPS GitHub URLs before inserting them into the page.
+
+### Core Concepts
+
+* `fetch` starts an HTTP request and returns a promise for the response.
+* `async`/`await` expresses asynchronous steps in readable sequence without blocking the browser's main thread while the network is pending.
+* A completed network request is not necessarily an application success; `response.ok` and the HTTP status must also be checked.
+* Request-driven UI needs explicit loading, success, empty, and error states.
+* Data from an API is external input and must not be trusted merely because its source is familiar.
+
+### Project Connection
+
+* `loadRepositories` owns the request lifecycle and translates HTTP/JSON outcomes into UI state.
+* `updateState` and `renderProjects` keep network decisions separate from DOM presentation.
+* `renderProjectCards` uses `map`, destructuring, and template literals to transform repository objects into cards.
+* `escapeHtml` and `getSafeRepositoryUrl` constrain remote content before it reaches `innerHTML` or a link destination.
+
+### Browser / CS Connection
+
+The page JavaScript runs in the browser, resolves `api.github.com`, establishes an HTTPS connection, sends an HTTP request, and receives headers plus a JSON response body. GitHub's server owns the repository data and response status; this portfolio only requests, validates, and presents that response. CORS response headers determine whether browser JavaScript from the portfolio's origin may read the cross-origin response.
+
+### React Connection
+
+React would change how these states are stored and rendered, but it would not remove the network lifecycle. A React component would still need loading, success, empty, and error branches, usually through state hooks or a data-fetching library.
+
+### Guided Explanation
+
+`fetch` rejects for failures such as an unavailable network, but a server can successfully return an HTTP response whose status is `404`, `403`, or `500`. That is why the code checks the response status before parsing and rendering. A `403` receives a more useful rate-limit message, while other unsuccessful responses use a general failure message.
+
+The request flow is a small state machine: `idle → loading → success | empty | error`. Retry does not create a second special workflow; it calls `loadRepositories` again, which first returns the UI to `loading`. Keeping one entry point prevents the first request and later retries from behaving differently.
+
+The browser/API boundary is also a trust boundary. Repository descriptions are escaped before `innerHTML`, and link destinations are accepted only when they use HTTPS on `github.com`. Frontend checks protect presentation, while authentication, authorization, secret storage, and authoritative validation would belong on a trusted server.
+
+### Remaining Gaps
+
+* Request cancellation, timeout policy, pagination, caching, and authenticated rate limits belong to later API work.
+* DNS, TLS, HTTP versions, proxies, CDNs, and browser networking will be revisited in the end-to-end web-system track.
