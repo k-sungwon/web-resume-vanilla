@@ -2,11 +2,11 @@ Project Learning Status
 
 Current Milestone
 
-Milestone 4 / State and Forms
+Milestone 5 / Asynchronous API
 
 Current Task
 
-Implement contact form state and validation.
+Implement GitHub API request states and project rendering.
 
 Completed
 
@@ -35,25 +35,28 @@ Completed
 * Light/dark theme state and one-path rendering implemented
 * Theme preference persistence verified across reloads
 * Browser-storage trust boundary explained
+* Contact values, errors, and submission state implemented
+* Empty, malformed-email, valid, and whitespace-normalized form paths verified
+* Client/server validation trust boundary explained
 
 Next
 
-1. Implement contact form state and validation
-2. Verify empty, malformed, and valid submissions
-3. Explain state → render and client/server validation boundaries
-4. Integrate GitHub API request states
+1. Integrate GitHub API request states
+2. Render loading, success, empty, and error outcomes
+3. Add retry behavior and rate-limit-specific feedback
+4. Explain the frontend/API/backend request path
 
 Learning NOW
 
-* Explicit state and render functions
-* Browser `localStorage` persistence
-* Form values, validation errors, and accessible feedback
+* `fetch`, promises, and `async`/`await`
+* HTTP status, JSON parsing, and CORS
+* Loading, success, empty, and error state machines
 
 Learning CHECKPOINT
 
-* Event → state → render → DOM update
-* Why frontend storage cannot contain secrets
-* Why client-side validation cannot replace server validation
+* Browser → GitHub API frontend/backend boundary
+* Why HTTP success and network success are different checks
+* How retry re-enters the same request-state flow
 
 Learning LATER
 

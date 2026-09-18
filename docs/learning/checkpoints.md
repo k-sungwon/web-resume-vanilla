@@ -222,3 +222,47 @@ The button does not directly toggle unrelated DOM details one by one. It chooses
 
 * Form state will add multiple values and validation errors.
 * Shared state, storage events across tabs, and system-theme detection remain later topics.
+
+⸻
+
+## Milestone 4B — Contact form state and validation
+
+### What I Built
+
+* Collected trimmed name, email, and message values into form state.
+* Validated required values and basic email shape during input and submit events.
+* Rendered adjacent errors, invalid classes, `aria-invalid`, first-error focus, and a success message.
+* Prevented native submission and made successful submission explicitly simulated rather than claiming delivery.
+
+### Core Concepts
+
+* One input event changes one value/error pair; submit validates the complete state.
+* Validation produces data, and rendering decides how that data appears in the DOM.
+* `preventDefault` replaces a browser's native form navigation with application behavior.
+* Client validation improves UX but cannot establish trust.
+
+### Project Connection
+
+* `getValues` reads and normalizes DOM values.
+* `validateField` and `validate` create error state without deciding presentation.
+* `renderFieldError` and `renderErrors` synchronize error state with text, class, and ARIA attributes.
+* `hasErrors` controls the error or success branch.
+
+### Browser / CS Connection
+
+Input events fire as editable values change. Submit is a separate event whose default behavior would navigate and send form fields. Calling `preventDefault` keeps the page in place so JavaScript can validate and render feedback.
+
+### React Connection
+
+React forms often keep input and error values in component state and render messages from that state. The same data-flow idea is visible here without framework abstractions.
+
+### Guided Explanation
+
+Separating validation from rendering matters because a rule such as “email is malformed” is data, while red borders, error text, and focus are presentation decisions. Keeping those responsibilities distinct makes the rules easier to reuse and the UI easier to change.
+
+The browser is controlled by the user, so client validation can be disabled or bypassed. A future real form service must repeat validation on its trusted server before storing data, sending email, or making permission-sensitive decisions.
+
+### Remaining Gaps
+
+* Real submission, server validation, spam protection, and CSRF defenses remain outside the first release.
+* More complex forms may need debouncing, async validation, and richer error summaries.
