@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="HTML, CSS, JavaScript로 만든 학습용 프론트엔드 포트폴리오"
+    >
+    <title>Kim Developer | Frontend Portfolio</title>
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <script src="js/navigation.js?v=1" defer></script>
+    <script src="js/theme.js?v=1" defer></script>
+    <script src="js/scroll.js?v=1" defer></script>
+    <script src="js/contact.js?v=1" defer></script>
+    <script src="js/projects.js?v=6" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a class="logo" href="#hero">KD</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+        >
+          <span class="sr-only">메뉴 열기</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+        <ul class="nav-links" id="primary-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="다크 모드로 전환">
+          <span aria-hidden="true">🌙</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero" data-reveal>
+        <p>안녕하세요.</p>
+        <h1>배우며 만드는 프론트엔드 개발자 Kim입니다.</h1>
+        <p>웹의 구조부터 사용자 경험까지 직접 구현하고 이해합니다.</p>
+        <a class="button" href="#projects">프로젝트 보기</a>
+        <a class="button button-secondary" href="#contact">연락하기</a>
+      </section>
+
+      <section id="about" data-reveal>
+        <h2>About</h2>
+        <img
+          src="images/profile-placeholder.svg"
+          alt="Kim Developer의 프로필 자리표시 이미지"
+          width="320"
+          height="320"
+        >
+        <p>순수 HTML, CSS, JavaScript로 웹의 기본 동작을 학습하고 있습니다.</p>
+      </section>
+
+      <section id="skills" data-reveal>
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Git</li>
+        </ul>
+      </section>
+
+      <section id="projects" data-reveal>
+        <h2>Projects</h2>
+        <div id="project-state" aria-live="polite">
+          <p>프로젝트를 불러올 준비 중입니다.</p>
+        </div>
+      </section>
+
+      <section id="contact" data-reveal>
+        <h2>Contact</h2>
+        <form id="contact-form" novalidate>
+          <label for="name">이름</label>
+          <input id="name" name="name" required aria-describedby="name-error">
+          <p id="name-error" class="field-error"></p>
+
+          <label for="email">이메일</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            aria-describedby="email-error"
+          >
+          <p id="email-error" class="field-error"></p>
+
+          <label for="message">메시지</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            aria-describedby="message-error"
+          ></textarea>
+          <p id="message-error" class="field-error"></p>
+
+          <button type="submit">보내기</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Kim Developer</p>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </footer>
+
+    <button id="scroll-top" type="button" aria-label="페이지 맨 위로 이동">↑</button>
+  </body>
+</html>
