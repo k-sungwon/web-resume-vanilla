@@ -2,11 +2,11 @@ Project Learning Status
 
 Current Milestone
 
-Milestone 7 / GitHub Pages deployment
+Milestone 8 / Vanilla portfolio complete
 
 Current Task
 
-Prepare and verify the public GitHub Pages release.
+Study and personalize the completed portfolio, then begin the tooling and TypeScript project.
 
 Completed
 
@@ -48,25 +48,31 @@ Completed
 * Keyboard order and WCAG AA color contrast verified
 * Local Lighthouse audit completed: Performance 99, Accessibility 100, SEO 100
 * Integrated local release candidate verified
+* Feature branch pushed and PR #1 merged into `main`
+* GitHub Pages enabled from the `main` repository root
+* Public HTTPS URL verified: `https://k-sungwon.github.io/web-resume-vanilla/`
+* Production API, form, theme persistence, and repository-relative assets verified
+* Desktop, mobile, and dark-mode screenshots recorded
+* End-to-end web path, three state traces, and four evolution comparisons documented
 
 Next
 
-1. Verify branch, remote, and release preconditions
-2. Publish the approved release through GitHub Pages
-3. Verify HTTPS, repository-relative assets, API, and interactions in production
-4. Record the real URL and production screenshots
+1. Replace sample identity, links, image, and `GITHUB_USERNAME` while studying the existing code
+2. Review the completed state traces and source-to-pixels system walkthrough
+3. Start the tooling project with npm, ES Modules, Vite, linting/formatting, and TypeScript
+4. Add automated unit and browser tests before the later React rebuild
 
 Learning NOW
 
-* Static hosting, GitHub Pages, and production HTTPS
-* Repository path, relative asset requests, and cache headers
-* Local development server versus production hosting
+* Reading and explaining the completed Vanilla implementation
+* Safe replacement of sample configuration and content
+* Comparing direct DOM code with the future component approach
 
 Learning CHECKPOINT
 
-* Git commit → GitHub repository → Pages deployment → public browser
-* DNS → TLS → HTTP → browser resource discovery and rendering
-* What static hosting provides and what still needs a backend
+* Source → Git → Pages → DNS/TLS/HTTP → DOM/CSSOM → pixels
+* Theme, projects, and contact event → state → render traces
+* Classic scripts/Pages/manual QA versus modules/tooling/CI tests
 
 Learning LATER
 

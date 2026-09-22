@@ -40,7 +40,7 @@ The source roadmap changes over time. This file preserves the topics visible on 
 | Progressive Web Apps | PWAs; Service Workers | NOT STARTED | Offline-capable project |
 | Mobile applications | React Native; Flutter; Ionic | NOT STARTED | Later specialization |
 | Desktop applications | Node.js; Electron; Tauri; Flutter | NOT STARTED | Later specialization |
-| Deployment | GitHub Pages; Vercel; Cloudflare; Netlify; Railway; Render | NOT STARTED | Pages in this project; platform comparison later |
+| Deployment | GitHub Pages; Vercel; Cloudflare; Netlify; Railway; Render | APPLIED | `main` root deployed and verified over HTTPS; managed preview/platform comparison remains later |
 | Performance | Performance; Lighthouse; Cache-Control; streamed responses | PRACTICED | Local Lighthouse 99; production caching and streamed responses remain later |
 | Browser tooling | DevTools usage; Web APIs | APPLIED | Responsive DOM, storage, interaction, and Network outcomes verified in a real browser |
 | Product quality | Accessibility; Design Systems; Design System | PRACTICED | Semantic landmarks, labels, ARIA state, focus, and reduced motion applied; design systems remain later |
@@ -66,3 +66,4 @@ A status changes only when a project file, verification result, exercise, or che
 | Product quality | `index.html` relationships and accessibility state in all five scripts | Screen-reader testing and advanced WCAG audit |
 | Backend connection | GitHub request-state flow in `js/projects.js` | Build and secure an owned API, database, and deployment environment |
 | Performance | Local Lighthouse report: Performance 99, LCP 2.1s | Re-run on production and study caching, critical CSS, and streamed delivery |
+| Deployment | Public Pages URL `https://k-sungwon.github.io/web-resume-vanilla/` | Compare GitHub Actions, preview deployments, Vercel, Cloudflare, Netlify, Railway, and Render |

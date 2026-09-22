@@ -357,3 +357,65 @@ The local score was 99/100/100. The remaining Lighthouse opportunities were cach
 
 * Real screen-reader testing and broader browser/device coverage remain future quality work.
 * Production caching, HTTPS, repository subpath behavior, and public availability require the deployment milestone.
+
+⸻
+
+## Milestone 7 — GitHub Pages production deployment
+
+### What I Built
+
+* Pushed the verified feature branch, created PR #1, and merged 11 focused commits into `main` without conflicts.
+* Configured GitHub Pages to deploy the repository root from `main` with enforced HTTPS.
+* Published `https://k-sungwon.github.io/web-resume-vanilla/` and added desktop, mobile, and dark-mode screenshots.
+* Reverified project cards, form error/success paths, theme persistence, and all seven local asset URLs on the production origin.
+
+### Core Concepts
+
+* Git stores source history; GitHub Pages turns a chosen revision and directory into publicly served static files.
+* DNS maps the `k-sungwon.github.io` hostname toward GitHub's infrastructure, while TLS authenticates the HTTPS endpoint and encrypts transport.
+* The project lives below `/web-resume-vanilla/`, so relative asset URLs preserve the repository path automatically.
+* Static hosting serves files but does not add a private application server, database, or secret storage.
+
+### Guided Explanation
+
+The production path is now concrete: a source edit becomes a Git commit, the feature branch is reviewed and merged into GitHub's `main`, Pages selects the repository root, and GitHub's build/deployment infrastructure publishes those files. A browser requesting the public URL resolves the hostname, negotiates TLS, sends HTTPS requests, receives HTML, discovers the relative CSS/JavaScript/SVG URLs, builds the DOM and CSSOM, and renders pixels.
+
+The GitHub repository API is a second network path. JavaScript already delivered from Pages sends an HTTPS request from the user's browser to `api.github.com`. GitHub's CORS headers allow that separate origin to read the response. Pages is therefore the portfolio's static host, while the GitHub API remains an external backend.
+
+### Remaining Gaps
+
+* The sample identity and `octocat` API configuration are intentionally replaceable with personal content after code study.
+* CI checks, preview deployments, custom domains, cache tuning, and rollback automation belong to the deployment evolution track.
+
+⸻
+
+## Milestone 8 — Final system synthesis
+
+### Complete Web Path
+
+`source files → Git commit → GitHub main → Pages deployment → public URL → DNS → TLS → HTTP responses → HTML/DOM + CSS/CSSOM → layout/paint → JavaScript events/state/DOM updates → visible pixels`
+
+Projects add a branch to that chain:
+
+`browser fetch → api.github.com → HTTP status + JSON → request state → escaped card markup → DOM → layout/paint`
+
+### Three State Traces
+
+| Feature | Input/event | State transition | Render/DOM result | Failure path |
+| --- | --- | --- | --- | --- |
+| Theme | Toggle click | `light ↔ dark` | `data-theme`, icon, label, CSS variables | Storage failure keeps current-page state but loses persistence |
+| Projects | Initial load or retry | `idle → loading → success / empty / error` | Cards, empty copy, or retry UI replaces `#project-state` | Network/non-OK/invalid JSON enters error; `403` gets rate-limit guidance |
+| Contact | Input or submit | values/errors recomputed | Error text, invalid class, ARIA state, focus, or simulated success | Invalid input stays on page; no message is claimed as actually delivered |
+
+### Evolution Comparisons
+
+| Earlier approach | Limitation that appears as systems grow | Later approach | Gain | Cost / when the simpler approach still wins |
+| --- | --- | --- | --- | --- |
+| Manual DOM queries and mutations | Related UI details can drift and repeated updates become hard to coordinate | React-style state-driven components | Declarative UI composition and reusable state boundaries | Runtime/tooling/conventions; direct DOM remains excellent for small pages |
+| Deferred classic scripts in IIFEs | No explicit import/export graph and weak cross-file dependency tooling | ES Modules plus Vite/build tooling | Explicit dependencies, optimization, npm ecosystem, development server | Configuration/build artifacts; classic files remain transparent for small no-dependency sites |
+| Manual browser matrices | Repetition is slow and regressions can be missed | Unit, integration, and Playwright/Cypress tests | Repeatable CI feedback and broader state coverage | Test code and maintenance; exploratory manual checks still catch usability issues |
+| Branch-based Pages deployment | No per-change preview and limited pipeline control | GitHub Actions and managed preview platforms | Automated checks, previews, environment controls, rollbacks | Vendor/configuration complexity; direct Pages is sufficient for this static portfolio |
+
+### Next Learning Project
+
+The next project should introduce npm, ES Modules, Vite, ESLint/Prettier or Biome, TypeScript, and automated tests around a small application. React should follow after those browser and tooling layers are visible, so the framework can be compared with the direct state/render flows implemented here.

@@ -80,6 +80,18 @@ rg -n "\\bvar\\b" index.html js
 
 ## 배포
 
-GitHub Pages 배포 URL: **배포 후 기록 예정**
+GitHub Pages: [https://k-sungwon.github.io/web-resume-vanilla/](https://k-sungwon.github.io/web-resume-vanilla/)
 
-배포 후 데스크톱, 모바일, 다크 모드 스크린샷을 `images/screenshots/`에 추가하고 이 섹션에 연결합니다. 배포 URL과 스크린샷은 실제 운영 주소를 검증하기 전에는 예시 값으로 채우지 않습니다.
+`main` 브랜치의 저장소 루트를 GitHub Pages가 정적 파일로 배포합니다. HTTPS 운영 주소에서 상대 CSS/JavaScript/SVG 경로, GitHub API 카드 6개, 테마 복원, 폼 검증을 다시 확인했습니다.
+
+### 데스크톱
+
+![데스크톱 포트폴리오 화면](images/screenshots/desktop.png)
+
+### 모바일
+
+![모바일 포트폴리오 화면](images/screenshots/mobile.png)
+
+### 다크 모드
+
+![다크 모드 포트폴리오 화면](images/screenshots/dark.png)

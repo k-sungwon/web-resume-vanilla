@@ -8,13 +8,8 @@ CHECKPOINT
 
 Important concepts discovered during implementation that should be studied after the current milestone.
 
-* The complete path from source code to deployed browser UI
-* Frontend/backend boundary based on execution location and trust
-* URL, DNS, IP, TCP, TLS, HTTPS, and HTTP responsibilities
-* Static hosting, origin, CDN, and browser cache roles
-* DOM, CSSOM, layout, paint, and JavaScript-driven updates
-* API request/response, status codes, JSON, same-origin policy, and CORS
-* Git revision, deployment artifact, GitHub Pages, and basic CI/CD
+* Browser cache validation and GitHub Pages cache headers in production
+* Pull request review policy, CI quality gates, preview environments, and automated rollback
 
 LATER
 
@@ -49,3 +44,11 @@ Interesting or useful concepts that are outside the current project path.
 Completed
 
 Move sufficiently understood topics here instead of deleting them.
+
+* Complete path from source code and Git commit to GitHub Pages and deployed browser UI
+* Frontend/backend boundary based on execution location and trust
+* URL, DNS, TLS, HTTPS, and HTTP responsibilities at a first-project level
+* Static hosting, origin, and repository-relative asset roles
+* DOM, CSSOM, layout, paint, and JavaScript-driven updates
+* API request/response, status codes, JSON, same-origin policy, and CORS
+* Git revision, pull request merge, deployment artifact, and GitHub Pages
