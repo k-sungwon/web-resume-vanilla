@@ -6,7 +6,7 @@ Milestone 9 / SNN personal news redesign
 
 Current Task
 
-Review the written SNN redesign specification before producing the implementation plan.
+Review the SNN implementation plan and select an execution method.
 
 Completed
 
@@ -60,11 +60,13 @@ Completed
 * Required mission sections mapped into the news-site structure
 * GitHub API metadata plus local README-capture project design selected
 * SNN redesign specification written and self-reviewed
+* `Developing Story` ticker removed from the approved scope
+* SNN implementation plan written and self-reviewed
 
 Next
 
-1. Learner reviews and approves the written SNN redesign specification
-2. Write the detailed SNN implementation plan
+1. Learner reviews the SNN implementation plan and selects Native or Subagent-driven execution
+2. Create an isolated implementation worktree and branch
 3. Implement the redesign in milestone order with concise guided explanations
 4. Verify and redeploy the personalized site through GitHub Pages
 5. Resume the tooling and TypeScript learning project after personalization
