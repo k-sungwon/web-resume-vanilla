@@ -6,7 +6,7 @@ Milestone 9 / SNN personal news redesign
 
 Current Task
 
-Reconnect and verify navigation, Day/Night theme, scroll, and Send a Tip states.
+Add curated GitHub project reporting with local README captures.
 
 Completed
 
@@ -68,19 +68,21 @@ Completed
 * Milestone 9.2 black/red SNN visual system and Day/Night variables implemented
 * 320px, 768px, and 1024px layouts verified without horizontal overflow
 * Tablet visual order aligned with DOM order and Korean headline sizing corrected
+* Existing navigation, scroll, reveal, form, and theme selectors reverified against the SNN markup
+* Theme accessibility labels renamed to Day Edition and Night Edition
+* Send a Tip success state clarified as a local demo with no network transmission
 
 Next
 
-1. Reconnect and verify navigation, theme, scroll, and contact states
-2. Add curated GitHub project reporting with local README captures
-3. Run integrated verification and prepare the release branch
-4. Review and choose the branch integration method before redeployment
+1. Add curated GitHub project reporting with local README captures
+2. Run integrated verification and prepare the release branch
+3. Review and choose the branch integration method before redeployment
 
 Learning NOW
 
 * Mapping news-editorial meaning to semantic HTML
 * Separating static personal content from live GitHub metadata
-* Preserving event → state → render flows while changing the UI
+* Merging local editorial content with optional live GitHub metadata
 
 Learning CHECKPOINT
 

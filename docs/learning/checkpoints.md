@@ -458,3 +458,22 @@ Flexbox fits the navigation because the header arranges one row of items along a
 Mobile-first CSS starts with the document's natural one-column reading flow. The 768px and 1024px media queries add layout capacity instead of creating separate pages. The HTML remains the same document, and the browser recalculates layout from the CSS rules when the viewport changes.
 
 Visual prominence is not permission to rewrite reading order. The profile, main interview, and future story stay in the same DOM and visual sequence; desktop Grid changes their widths, not their meaning or keyboard/screen-reader order.
+
+⸻
+
+## Milestone 9.3 — Existing interactions in the SNN presentation
+
+### What Changed
+
+* Kept the navigation, scroll, form-validation, and theme state machines intact after verifying their selectors against the redesigned document.
+* Renamed the theme control to `Day Edition` and `Night Edition` so its accessible label matches the newsroom presentation.
+* Reworded the successful Send a Tip state to state explicitly that the demo form does not transmit data.
+* Reverified mobile menu closing after anchor navigation, sticky-header and scroll-top thresholds, reveal states, invalid-field focus, email validation, form reset, and theme persistence behavior.
+
+### Guided Explanation
+
+The visual redesign did not require new application state. Each interaction still follows the same small path: a user event changes JavaScript state or a DOM attribute, one render function updates the visible and accessible UI, and CSS styles that resulting state.
+
+The form demonstrates client-side validation, not delivery. `preventDefault()` stops browser submission, the script validates local values, and success clears the form without making a network request. Saying this in both the section copy and success message prevents the interface from implying that a server received the message.
+
+The theme preference is progressive enhancement. If `localStorage` works, the choice survives reloads; if access fails or contains an unsupported value, the page still renders the Day Edition and the toggle continues to work for the current page.
