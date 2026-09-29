@@ -438,3 +438,23 @@ A `section` groups one page topic and receives a heading that names it. An `arti
 The DOM order is the reading order before CSS is applied. Keeping the profile story, main interview, and future-interest story in a logical sequence means a screen reader and a narrow mobile display receive a coherent document even before the desktop Grid places them into columns.
 
 The class and ID names used by JavaScript are interfaces. The visual content changed substantially, but preserving `.nav-toggle`, `.nav-links`, `.theme-toggle`, `#project-state`, `#contact-form`, and `[data-reveal]` prevents an unnecessary rewrite of already working event → state → render logic.
+
+⸻
+
+## Milestone 9.2 — Editorial hierarchy and responsive CSS
+
+### What Changed
+
+* Replaced the rounded blue portfolio theme with the approved black, red, white, and warm-gray SNN newsroom system.
+* Built the layout mobile-first: one column at 320px, two columns from 768px, and an asymmetric three-column lead from 1024px.
+* Preserved the script-owned `.active`, `.scrolled`, `.visible`, `.project-grid`, and `.invalid` visual states in Day and Night Editions.
+* Verified zero horizontal overflow at 320px, 768px, and 1024px and reduced the tablet headline from 99.2px to 61.44px for readable Korean line breaks.
+* Removed a tablet `grid-row` rule after it was shown to make visual order differ from DOM reading order.
+
+### Guided Explanation
+
+Flexbox fits the navigation because the header arranges one row of items along a primary axis. Grid fits the article areas because both rows and columns matter and the layout changes from one to several columns.
+
+Mobile-first CSS starts with the document's natural one-column reading flow. The 768px and 1024px media queries add layout capacity instead of creating separate pages. The HTML remains the same document, and the browser recalculates layout from the CSS rules when the viewport changes.
+
+Visual prominence is not permission to rewrite reading order. The profile, main interview, and future story stay in the same DOM and visual sequence; desktop Grid changes their widths, not their meaning or keyboard/screen-reader order.

@@ -6,7 +6,7 @@ Milestone 9 / SNN personal news redesign
 
 Current Task
 
-Implement the SNN editorial visual system and responsive article layouts.
+Reconnect and verify navigation, Day/Night theme, scroll, and Send a Tip states.
 
 Completed
 
@@ -65,14 +65,16 @@ Completed
 * Native execution selected and isolated `codex/snn-news-resume` worktree created
 * Milestone 9.1 SNN semantic article structure and interview content implemented
 * Heading hierarchy, landmarks, navigation destinations, image alternative, form labels, and ticker absence verified in the browser
+* Milestone 9.2 black/red SNN visual system and Day/Night variables implemented
+* 320px, 768px, and 1024px layouts verified without horizontal overflow
+* Tablet visual order aligned with DOM order and Korean headline sizing corrected
 
 Next
 
-1. Implement and verify the mobile-first SNN visual system
-2. Reconnect and verify navigation, theme, scroll, and contact states
-3. Add curated GitHub project reporting with local README captures
-4. Run integrated verification and prepare the release branch
-5. Review and choose the branch integration method before redeployment
+1. Reconnect and verify navigation, theme, scroll, and contact states
+2. Add curated GitHub project reporting with local README captures
+3. Run integrated verification and prepare the release branch
+4. Review and choose the branch integration method before redeployment
 
 Learning NOW
 
