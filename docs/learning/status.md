@@ -6,7 +6,7 @@ Milestone 9 / SNN personal news redesign
 
 Current Task
 
-Review the SNN implementation plan and select an execution method.
+Implement the SNN editorial visual system and responsive article layouts.
 
 Completed
 
@@ -62,14 +62,17 @@ Completed
 * SNN redesign specification written and self-reviewed
 * `Developing Story` ticker removed from the approved scope
 * SNN implementation plan written and self-reviewed
+* Native execution selected and isolated `codex/snn-news-resume` worktree created
+* Milestone 9.1 SNN semantic article structure and interview content implemented
+* Heading hierarchy, landmarks, navigation destinations, image alternative, form labels, and ticker absence verified in the browser
 
 Next
 
-1. Learner reviews the SNN implementation plan and selects Native or Subagent-driven execution
-2. Create an isolated implementation worktree and branch
-3. Implement the redesign in milestone order with concise guided explanations
-4. Verify and redeploy the personalized site through GitHub Pages
-5. Resume the tooling and TypeScript learning project after personalization
+1. Implement and verify the mobile-first SNN visual system
+2. Reconnect and verify navigation, theme, scroll, and contact states
+3. Add curated GitHub project reporting with local README captures
+4. Run integrated verification and prepare the release branch
+5. Review and choose the branch integration method before redeployment
 
 Learning NOW
 

@@ -419,3 +419,22 @@ Projects add a branch to that chain:
 ### Next Learning Project
 
 The next project should introduce npm, ES Modules, Vite, ESLint/Prettier or Biome, TypeScript, and automated tests around a small application. React should follow after those browser and tooling layers are visible, so the framework can be compared with the direct state/render flows implemented here.
+
+⸻
+
+## Milestone 9.1 — SNN article structure and semantic HTML
+
+### What Changed
+
+* Replaced the sample identity with the `SNN — Sungwon News Network` brand and Kim Sungwon's interview-style story.
+* Added the editorial About, Learning, Missions, Skills, Projects, Life, and Contact sections without a ticker.
+* Preserved the existing navigation, theme, scroll, project, and form DOM hooks so the current JavaScript can keep using the same interface.
+* Verified one `h1`, logical `h2`/`h3` levels, six navigation destinations, the profile alternative, three label/control relationships, live regions, and footer link in the browser accessibility tree.
+
+### Guided Explanation
+
+A `section` groups one page topic and receives a heading that names it. An `article` represents a story that still makes sense when read on its own, which is why each mission and life item is an article rather than an anonymous layout box.
+
+The DOM order is the reading order before CSS is applied. Keeping the profile story, main interview, and future-interest story in a logical sequence means a screen reader and a narrow mobile display receive a coherent document even before the desktop Grid places them into columns.
+
+The class and ID names used by JavaScript are interfaces. The visual content changed substantially, but preserving `.nav-toggle`, `.nav-links`, `.theme-toggle`, `#project-state`, `#contact-form`, and `[data-reveal]` prevents an unnecessary rewrite of already working event → state → render logic.
