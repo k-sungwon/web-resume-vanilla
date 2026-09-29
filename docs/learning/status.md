@@ -2,11 +2,11 @@ Project Learning Status
 
 Current Milestone
 
-Milestone 9 / SNN personal news redesign
+Milestone 9.5 / SNN release candidate verified
 
 Current Task
 
-Run integrated accessibility, responsive, and release-candidate verification.
+Review the completed branch and choose the integration method before redeployment.
 
 Completed
 
@@ -74,17 +74,25 @@ Completed
 * Four public README previews captured locally at 1200 × 675
 * Curated `k-sungwon` project stories merged with live GitHub API metadata in editorial order
 * Loading, empty, generic error, 403, retry, missing-repository, hostile-data, and broken-media states verified
+* 320px, 768px, and 1024px Day/Night responsive matrix passed with zero horizontal overflow
+* Keyboard menu, section navigation, theme, form, and scroll-top flows verified
+* Heading, landmark, image, form, live-region, and motion-reduction accessibility checks passed
+* Missing favicon diagnosed from Lighthouse and fixed with an explicit local SVG resource
+* Lighthouse measured 100/100/100/100 with no console error, failed resource, or unsized image failure
+* SNN desktop Day, mobile Day, and desktop Night screenshots captured and visually reviewed
+* README rewritten for the SNN purpose, architecture, states, verification, and deployment boundary
 
 Next
 
-1. Run integrated verification and prepare the release branch
-2. Review and choose the branch integration method before redeployment
+1. Review the completed branch
+2. Choose whether to merge, push/PR, or keep the branch before redeployment
+3. Verify the public Pages URL only after the selected integration
 
 Learning NOW
 
 * Mapping news-editorial meaning to semantic HTML
 * Separating static personal content from live GitHub metadata
-* Verifying the complete SNN page as one release candidate
+* Reviewing evidence before branch integration and redeployment
 
 Learning CHECKPOINT
 

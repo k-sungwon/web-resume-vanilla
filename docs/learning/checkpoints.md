@@ -497,3 +497,22 @@ Personal interpretation belongs in local source because it should not disappear 
 The data flow is `load/retry event → loading state → GitHub response → editorial-order merge → success/empty/error state → DOM render`. A missing repository is filtered out after the merge, while a failed request keeps the page usable and offers a retry instead of deleting the whole section.
 
 Remote text is escaped before it enters `innerHTML`, and repository links are accepted only when they use HTTPS on `github.com`. Those boundaries matter because public API data is still external input, not trusted HTML.
+
+⸻
+
+## Milestone 9.5 — SNN release candidate verification
+
+### What Changed
+
+* Verified Day and Night Editions at 320px, 768px, and 1024px with zero horizontal overflow and the intended one-, two-, and three-column transitions.
+* Verified keyboard operation for the mobile menu, internal navigation, theme, Send a Tip fields and submit action, and scroll-top control.
+* Confirmed one `h1`, no skipped heading level, eight labelled sections, meaningful image alternatives and dimensions, form label/description relationships, and two polite live regions.
+* Added an explicit local SVG favicon after Lighthouse exposed the implicit `/favicon.ico` request as a 404 and console error.
+* Replaced the README screenshots with SNN desktop Day, mobile Day, and desktop Night captures and documented the current architecture and verified behavior.
+* Measured Lighthouse 100 for Performance, Accessibility, Best Practices, and SEO with no console error, failed resource, or unsized image audit failure and a CLS of `0.000008`.
+
+### Guided Explanation
+
+The release review follows the same path as the running web: source files are parsed and requested, CSS creates layout and themes, JavaScript connects events to state and DOM updates, and external GitHub data joins the local article model. Static checks catch source-level mistakes; browser matrices catch viewport and interaction mistakes; Lighthouse observes the integrated result.
+
+The deployment chain remains `source → Git commit → GitHub main → Pages → DNS → TLS → HTTP → DOM/CSSOM → layout/paint → pixels`. This branch has completed the source-to-local-browser portion. The public Pages result must be checked only after the user chooses and completes branch integration.
