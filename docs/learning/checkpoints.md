@@ -477,3 +477,23 @@ The visual redesign did not require new application state. Each interaction stil
 The form demonstrates client-side validation, not delivery. `preventDefault()` stops browser submission, the script validates local values, and success clears the form without making a network request. Saying this in both the section copy and success message prevents the interface from implying that a server received the message.
 
 The theme preference is progressive enhancement. If `localStorage` works, the choice survives reloads; if access fails or contains an unsupported value, the page still renders the Day Edition and the toggle continues to work for the current page.
+
+⸻
+
+## Milestone 9.4 — Curated GitHub reporting
+
+### What Changed
+
+* Selected four `k-sungwon` repositories and wrote their interview summaries as a stable local editorial dataset.
+* Rendered the visible top of each repository's public README into a local 1200 × 675 preview, without browser chrome or unrelated repository controls.
+* Replaced the generic `octocat` list with editorial-order articles that merge live descriptions, languages, star counts, URLs, and update dates from the GitHub API.
+* Preserved loading, success, empty, generic error, 403 rate-limit, and delegated retry states while omitting missing curated repositories without blank cards.
+* Verified escaped hostile text, the safe profile fallback for a non-GitHub URL, useful alternatives and stable dimensions for broken media, and four restored local images.
+
+### Guided Explanation
+
+Personal interpretation belongs in local source because it should not disappear or change when a remote service changes. The repository description, language, stars, and update date belong to GitHub and can change independently. Joining the two by exact repository name gives each project a stable story with optional live evidence.
+
+The data flow is `load/retry event → loading state → GitHub response → editorial-order merge → success/empty/error state → DOM render`. A missing repository is filtered out after the merge, while a failed request keeps the page usable and offers a retry instead of deleting the whole section.
+
+Remote text is escaped before it enters `innerHTML`, and repository links are accepted only when they use HTTPS on `github.com`. Those boundaries matter because public API data is still external input, not trusted HTML.

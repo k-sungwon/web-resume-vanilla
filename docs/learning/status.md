@@ -6,7 +6,7 @@ Milestone 9 / SNN personal news redesign
 
 Current Task
 
-Add curated GitHub project reporting with local README captures.
+Run integrated accessibility, responsive, and release-candidate verification.
 
 Completed
 
@@ -71,18 +71,20 @@ Completed
 * Existing navigation, scroll, reveal, form, and theme selectors reverified against the SNN markup
 * Theme accessibility labels renamed to Day Edition and Night Edition
 * Send a Tip success state clarified as a local demo with no network transmission
+* Four public README previews captured locally at 1200 × 675
+* Curated `k-sungwon` project stories merged with live GitHub API metadata in editorial order
+* Loading, empty, generic error, 403, retry, missing-repository, hostile-data, and broken-media states verified
 
 Next
 
-1. Add curated GitHub project reporting with local README captures
-2. Run integrated verification and prepare the release branch
-3. Review and choose the branch integration method before redeployment
+1. Run integrated verification and prepare the release branch
+2. Review and choose the branch integration method before redeployment
 
 Learning NOW
 
 * Mapping news-editorial meaning to semantic HTML
 * Separating static personal content from live GitHub metadata
-* Merging local editorial content with optional live GitHub metadata
+* Verifying the complete SNN page as one release candidate
 
 Learning CHECKPOINT
 
