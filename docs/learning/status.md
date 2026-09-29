@@ -2,11 +2,11 @@ Project Learning Status
 
 Current Milestone
 
-Milestone 8 / Vanilla portfolio complete
+Milestone 9 / SNN personal news redesign
 
 Current Task
 
-Study and personalize the completed portfolio, then begin the tooling and TypeScript project.
+Review the written SNN redesign specification before producing the implementation plan.
 
 Completed
 
@@ -54,25 +54,33 @@ Completed
 * Production API, form, theme persistence, and repository-relative assets verified
 * Desktop, mobile, and dark-mode screenshots recorded
 * End-to-end web path, three state traces, and four evolution comparisons documented
+* Personal interview content and section scope collected
+* Aged broadsheet and modern news directions compared visually
+* CNN-inspired SNN visual direction approved
+* Required mission sections mapped into the news-site structure
+* GitHub API metadata plus local README-capture project design selected
+* SNN redesign specification written and self-reviewed
 
 Next
 
-1. Replace sample identity, links, image, and `GITHUB_USERNAME` while studying the existing code
-2. Review the completed state traces and source-to-pixels system walkthrough
-3. Start the tooling project with npm, ES Modules, Vite, linting/formatting, and TypeScript
-4. Add automated unit and browser tests before the later React rebuild
+1. Learner reviews and approves the written SNN redesign specification
+2. Write the detailed SNN implementation plan
+3. Implement the redesign in milestone order with concise guided explanations
+4. Verify and redeploy the personalized site through GitHub Pages
+5. Resume the tooling and TypeScript learning project after personalization
 
 Learning NOW
 
-* Reading and explaining the completed Vanilla implementation
-* Safe replacement of sample configuration and content
-* Comparing direct DOM code with the future component approach
+* Mapping news-editorial meaning to semantic HTML
+* Separating static personal content from live GitHub metadata
+* Preserving event → state → render flows while changing the UI
 
 Learning CHECKPOINT
 
 * Source → Git → Pages → DNS/TLS/HTTP → DOM/CSSOM → pixels
+* Article document order versus responsive visual order
+* Local editorial data + GitHub API response → merged project article
 * Theme, projects, and contact event → state → render traces
-* Classic scripts/Pages/manual QA versus modules/tooling/CI tests
 
 Learning LATER
 

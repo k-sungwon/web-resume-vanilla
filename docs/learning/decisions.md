@@ -150,3 +150,55 @@ Guided explanations preserve the connection between implementation and fundament
 ### Trade-offs
 
 The workflow loses mandatory retrieval practice, but gains continuity and lower interruption. Learning records preserve the explanations for later review.
+
+⸻
+
+## 2026-09-29 — Personalize the portfolio as SNN, an editorial news site
+
+### Decision
+
+Redesign the completed portfolio as `SNN — Sungwon News Network`, using CNN-inspired information hierarchy without copying CNN branding or content.
+
+### Context
+
+The generic portfolio layout met the functional mission but did not sufficiently express the learner's personality, project reflections, or preferred way of telling a story.
+
+### Alternatives
+
+* Keep the existing clean portfolio and only replace the sample text.
+* Use an aged broadsheet newspaper with paper textures and traditional typography.
+* Use a modern news network layout with a black header, red accents, strong headlines, and asymmetric article grids.
+
+### Why
+
+The modern news format supports long interview-style content, clear prioritization, and project reporting while remaining compatible with the required responsive sections and interactions. A distinct SNN identity avoids brand confusion.
+
+### Trade-offs
+
+The design gains personality and a strong editorial structure but requires more careful hierarchy and responsive layout work than a conventional card portfolio. Decorative aged-paper effects are intentionally omitted.
+
+⸻
+
+## 2026-09-29 — Combine GitHub API metadata with local README captures
+
+### Decision
+
+Use the GitHub API for live repository metadata and a repository-name keyed local map for interview copy, display order, and README screenshot assets.
+
+### Context
+
+Project articles need to show real repository information while also including a visually stable excerpt of each README and the learner's own reflection.
+
+### Alternatives
+
+* Render only the GitHub API fields.
+* Fetch and render README Markdown at runtime.
+* Store all project information locally without the GitHub API.
+
+### Why
+
+The hybrid design keeps the required asynchronous API learning flow and allows each project to have deliberate editorial content. Local screenshots avoid adding a Markdown parser or unsafe HTML rendering to a Vanilla assignment.
+
+### Trade-offs
+
+Live metadata stays current, but README images and interview copy must be updated manually when a repository changes.
