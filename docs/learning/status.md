@@ -2,11 +2,11 @@ Project Learning Status
 
 Current Milestone
 
-Milestone 8 / Vanilla portfolio complete
+Milestone 9.5 / SNN release candidate verified
 
 Current Task
 
-Study and personalize the completed portfolio, then begin the tooling and TypeScript project.
+Review the completed branch and choose the integration method before redeployment.
 
 Completed
 
@@ -54,25 +54,55 @@ Completed
 * Production API, form, theme persistence, and repository-relative assets verified
 * Desktop, mobile, and dark-mode screenshots recorded
 * End-to-end web path, three state traces, and four evolution comparisons documented
+* Personal interview content and section scope collected
+* Aged broadsheet and modern news directions compared visually
+* CNN-inspired SNN visual direction approved
+* Required mission sections mapped into the news-site structure
+* GitHub API metadata plus local README-capture project design selected
+* SNN redesign specification written and self-reviewed
+* `Developing Story` ticker removed from the approved scope
+* SNN implementation plan written and self-reviewed
+* Native execution selected and isolated `codex/snn-news-resume` worktree created
+* Milestone 9.1 SNN semantic article structure and interview content implemented
+* Heading hierarchy, landmarks, navigation destinations, image alternative, form labels, and ticker absence verified in the browser
+* Milestone 9.2 black/red SNN visual system and Day/Night variables implemented
+* 320px, 768px, and 1024px layouts verified without horizontal overflow
+* Tablet visual order aligned with DOM order and Korean headline sizing corrected
+* Existing navigation, scroll, reveal, form, and theme selectors reverified against the SNN markup
+* Theme accessibility labels renamed to Day Edition and Night Edition
+* Send a Tip success state clarified as a local demo with no network transmission
+* Four public README previews captured locally at 1200 × 675
+* Curated `k-sungwon` project stories merged with live GitHub API metadata in editorial order
+* Loading, empty, generic error, 403, retry, missing-repository, hostile-data, and broken-media states verified
+* 320px, 768px, and 1024px Day/Night responsive matrix passed with zero horizontal overflow
+* Keyboard menu, section navigation, theme, form, and scroll-top flows verified
+* Heading, landmark, image, form, live-region, and motion-reduction accessibility checks passed
+* Missing favicon diagnosed from Lighthouse and fixed with an explicit local SVG resource
+* Lighthouse measured 100/100/100/100 with no console error, failed resource, or unsized image failure
+* SNN desktop Day, mobile Day, and desktop Night screenshots captured and visually reviewed
+* README rewritten for the SNN purpose, architecture, states, verification, and deployment boundary
+* Independent release review completed with no Critical findings
+* Night Edition button contrast corrected to 5.75:1 default and 7.31:1 hover
+* Featured repository preview regenerated from the current SNN README
 
 Next
 
-1. Replace sample identity, links, image, and `GITHUB_USERNAME` while studying the existing code
-2. Review the completed state traces and source-to-pixels system walkthrough
-3. Start the tooling project with npm, ES Modules, Vite, linting/formatting, and TypeScript
-4. Add automated unit and browser tests before the later React rebuild
+1. Review the completed branch
+2. Choose whether to merge, push/PR, or keep the branch before redeployment
+3. Verify the public Pages URL only after the selected integration
 
 Learning NOW
 
-* Reading and explaining the completed Vanilla implementation
-* Safe replacement of sample configuration and content
-* Comparing direct DOM code with the future component approach
+* Mapping news-editorial meaning to semantic HTML
+* Separating static personal content from live GitHub metadata
+* Reviewing evidence before branch integration and redeployment
 
 Learning CHECKPOINT
 
 * Source → Git → Pages → DNS/TLS/HTTP → DOM/CSSOM → pixels
+* Article document order versus responsive visual order
+* Local editorial data + GitHub API response → merged project article
 * Theme, projects, and contact event → state → render traces
-* Classic scripts/Pages/manual QA versus modules/tooling/CI tests
 
 Learning LATER
 

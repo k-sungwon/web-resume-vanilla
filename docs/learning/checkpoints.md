@@ -419,3 +419,101 @@ Projects add a branch to that chain:
 ### Next Learning Project
 
 The next project should introduce npm, ES Modules, Vite, ESLint/Prettier or Biome, TypeScript, and automated tests around a small application. React should follow after those browser and tooling layers are visible, so the framework can be compared with the direct state/render flows implemented here.
+
+⸻
+
+## Milestone 9.1 — SNN article structure and semantic HTML
+
+### What Changed
+
+* Replaced the sample identity with the `SNN — Sungwon News Network` brand and Kim Sungwon's interview-style story.
+* Added the editorial About, Learning, Missions, Skills, Projects, Life, and Contact sections without a ticker.
+* Preserved the existing navigation, theme, scroll, project, and form DOM hooks so the current JavaScript can keep using the same interface.
+* Verified one `h1`, logical `h2`/`h3` levels, six navigation destinations, the profile alternative, three label/control relationships, live regions, and footer link in the browser accessibility tree.
+
+### Guided Explanation
+
+A `section` groups one page topic and receives a heading that names it. An `article` represents a story that still makes sense when read on its own, which is why each mission and life item is an article rather than an anonymous layout box.
+
+The DOM order is the reading order before CSS is applied. Keeping the profile story, main interview, and future-interest story in a logical sequence means a screen reader and a narrow mobile display receive a coherent document even before the desktop Grid places them into columns.
+
+The class and ID names used by JavaScript are interfaces. The visual content changed substantially, but preserving `.nav-toggle`, `.nav-links`, `.theme-toggle`, `#project-state`, `#contact-form`, and `[data-reveal]` prevents an unnecessary rewrite of already working event → state → render logic.
+
+⸻
+
+## Milestone 9.2 — Editorial hierarchy and responsive CSS
+
+### What Changed
+
+* Replaced the rounded blue portfolio theme with the approved black, red, white, and warm-gray SNN newsroom system.
+* Built the layout mobile-first: one column at 320px, two columns from 768px, and an asymmetric three-column lead from 1024px.
+* Preserved the script-owned `.active`, `.scrolled`, `.visible`, `.project-grid`, and `.invalid` visual states in Day and Night Editions.
+* Verified zero horizontal overflow at 320px, 768px, and 1024px and reduced the tablet headline from 99.2px to 61.44px for readable Korean line breaks.
+* Removed a tablet `grid-row` rule after it was shown to make visual order differ from DOM reading order.
+
+### Guided Explanation
+
+Flexbox fits the navigation because the header arranges one row of items along a primary axis. Grid fits the article areas because both rows and columns matter and the layout changes from one to several columns.
+
+Mobile-first CSS starts with the document's natural one-column reading flow. The 768px and 1024px media queries add layout capacity instead of creating separate pages. The HTML remains the same document, and the browser recalculates layout from the CSS rules when the viewport changes.
+
+Visual prominence is not permission to rewrite reading order. The profile, main interview, and future story stay in the same DOM and visual sequence; desktop Grid changes their widths, not their meaning or keyboard/screen-reader order.
+
+⸻
+
+## Milestone 9.3 — Existing interactions in the SNN presentation
+
+### What Changed
+
+* Kept the navigation, scroll, form-validation, and theme state machines intact after verifying their selectors against the redesigned document.
+* Renamed the theme control to `Day Edition` and `Night Edition` so its accessible label matches the newsroom presentation.
+* Reworded the successful Send a Tip state to state explicitly that the demo form does not transmit data.
+* Reverified mobile menu closing after anchor navigation, sticky-header and scroll-top thresholds, reveal states, invalid-field focus, email validation, form reset, and theme persistence behavior.
+
+### Guided Explanation
+
+The visual redesign did not require new application state. Each interaction still follows the same small path: a user event changes JavaScript state or a DOM attribute, one render function updates the visible and accessible UI, and CSS styles that resulting state.
+
+The form demonstrates client-side validation, not delivery. `preventDefault()` stops browser submission, the script validates local values, and success clears the form without making a network request. Saying this in both the section copy and success message prevents the interface from implying that a server received the message.
+
+The theme preference is progressive enhancement. If `localStorage` works, the choice survives reloads; if access fails or contains an unsupported value, the page still renders the Day Edition and the toggle continues to work for the current page.
+
+⸻
+
+## Milestone 9.4 — Curated GitHub reporting
+
+### What Changed
+
+* Selected four `k-sungwon` repositories and wrote their interview summaries as a stable local editorial dataset.
+* Rendered the visible top of each repository's public README into a local 1200 × 675 preview, without browser chrome or unrelated repository controls.
+* Replaced the generic `octocat` list with editorial-order articles that merge live descriptions, languages, star counts, URLs, and update dates from the GitHub API.
+* Preserved loading, success, empty, generic error, 403 rate-limit, and delegated retry states while omitting missing curated repositories without blank cards.
+* Verified escaped hostile text, the safe profile fallback for a non-GitHub URL, useful alternatives and stable dimensions for broken media, and four restored local images.
+
+### Guided Explanation
+
+Personal interpretation belongs in local source because it should not disappear or change when a remote service changes. The repository description, language, stars, and update date belong to GitHub and can change independently. Joining the two by exact repository name gives each project a stable story with optional live evidence.
+
+The data flow is `load/retry event → loading state → GitHub response → editorial-order merge → success/empty/error state → DOM render`. A missing repository is filtered out after the merge, while a failed request keeps the page usable and offers a retry instead of deleting the whole section.
+
+Remote text is escaped before it enters `innerHTML`, and repository links are accepted only when they use HTTPS on `github.com`. Those boundaries matter because public API data is still external input, not trusted HTML.
+
+⸻
+
+## Milestone 9.5 — SNN release candidate verification
+
+### What Changed
+
+* Verified Day and Night Editions at 320px, 768px, and 1024px with zero horizontal overflow and the intended one-, two-, and three-column transitions.
+* Verified keyboard operation for the mobile menu, internal navigation, theme, Send a Tip fields and submit action, and scroll-top control.
+* Confirmed one `h1`, no skipped heading level, eight labelled sections, meaningful image alternatives and dimensions, form label/description relationships, and two polite live regions.
+* Added an explicit local SVG favicon after Lighthouse exposed the implicit `/favicon.ico` request as a 404 and console error.
+* Replaced the README screenshots with SNN desktop Day, mobile Day, and desktop Night captures and documented the current architecture and verified behavior.
+* Resolved independent review findings by giving Night Edition buttons a high-contrast text token and regenerating the featured project preview from the current SNN README.
+* Measured Lighthouse 100 for Performance, Accessibility, Best Practices, and SEO with no console error, failed resource, or unsized image audit failure and a CLS of `0.000008`.
+
+### Guided Explanation
+
+The release review follows the same path as the running web: source files are parsed and requested, CSS creates layout and themes, JavaScript connects events to state and DOM updates, and external GitHub data joins the local article model. Static checks catch source-level mistakes; browser matrices catch viewport and interaction mistakes; Lighthouse observes the integrated result.
+
+The deployment chain remains `source → Git commit → GitHub main → Pages → DNS → TLS → HTTP → DOM/CSSOM → layout/paint → pixels`. This branch has completed the source-to-local-browser portion. The public Pages result must be checked only after the user chooses and completes branch integration.

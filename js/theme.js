@@ -24,7 +24,7 @@
     const isDark = theme === 'dark';
 
     document.documentElement.dataset.theme = theme;
-    themeToggle.setAttribute('aria-label', isDark ? '라이트 모드로 전환' : '다크 모드로 전환');
+    themeToggle.setAttribute('aria-label', isDark ? 'Day Edition으로 전환' : 'Night Edition으로 전환');
 
     if (themeIcon) {
       themeIcon.textContent = isDark ? '☀️' : '🌙';

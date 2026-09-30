@@ -89,7 +89,7 @@
       return;
     }
 
-    formStatus.textContent = '메시지가 성공적으로 확인되었습니다.';
+    formStatus.textContent = '제보 내용을 확인했습니다. 실제로 전송되지는 않습니다.';
     form.reset();
     state.values = { name: '', email: '', message: '' };
     state.errors = { name: '', email: '', message: '' };

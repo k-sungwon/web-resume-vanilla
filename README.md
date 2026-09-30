@@ -1,63 +1,70 @@
-# Vanilla Frontend Portfolio
+# SNN — Sungwon News Network
 
-외부 프레임워크 없이 HTML, CSS, JavaScript만으로 만든 반응형 학습용 포트폴리오입니다. 브라우저의 이벤트가 상태를 바꾸고, 그 상태가 DOM과 화면에 반영되는 흐름을 직접 구현하는 것이 핵심입니다.
+김성원의 개발 학습, Codyssey 미션, GitHub 프로젝트, 관심사를 뉴스 기사처럼 읽을 수 있게 만든 개인 자기소개 사이트입니다. 외부 프레임워크 없이 HTML, CSS, JavaScript로 문서 구조, 반응형 배치, 이벤트와 상태, 네트워크 상태를 직접 구현한 학습 프로젝트입니다.
 
-## 주요 기능
+## 지면 구성
 
-* Header, Hero, About, Skills, Projects, Contact, Footer의 시맨틱 구조
-* 320px 모바일부터 데스크톱까지 대응하는 모바일 퍼스트 레이아웃
-* 햄버거 메뉴, 내부 링크 스크롤, 스크롤 반응형 Header와 맨 위 버튼
-* `localStorage`에 선택을 유지하는 라이트/다크 테마
-* 입력 중 및 제출 시 동작하는 문의 폼 검증
-* GitHub REST API 기반 프로젝트 로딩·성공·빈 결과·오류·재시도 UI
-* 키보드 포커스 표시, ARIA 상태, 모션 감소 설정 대응
+* Front Page: 개발을 시작한 이유와 학습 기준
+* Learning: Codyssey를 선택한 이유와 자신의 언어로 설명하는 학습법
+* Codyssey Report: Shell/Docker, Python Quiz, Tiny NPU 미션 회고
+* Skills Desk: HTML, CSS, JavaScript, Git, Python, Docker의 사용 맥락
+* GitHub Projects: 네 개 저장소의 README 미리보기와 인터뷰 기사
+* Life & Culture: 러닝, 《광마회귀》, 헤드폰과 음악 감상
+* Send a Tip: 입력값을 전송하지 않는 클라이언트 폼 검증 데모
 
-## 기술과 구조
+## 구조와 기술 선택
 
 ```text
 .
-├── index.html                    # 문서 구조와 접근성 관계
-├── css/style.css                 # 디자인 토큰, 반응형 레이아웃, 테마
+├── index.html                    # 시맨틱 문서와 접근성 관계
+├── css/style.css                 # SNN 토큰, Day/Night, 반응형 레이아웃
 ├── js/
 │   ├── navigation.js             # 모바일 메뉴와 내부 탐색
-│   ├── theme.js                  # 테마 상태와 저장
-│   ├── scroll.js                 # 스크롤 파생 UI와 관찰자
-│   ├── contact.js                # 폼 값·오류 상태와 검증
-│   └── projects.js               # GitHub API 요청 상태와 카드 렌더링
-├── images/profile-placeholder.svg
+│   ├── theme.js                  # Day/Night 상태와 localStorage
+│   ├── scroll.js                 # Header, 맨 위 버튼, reveal 상태
+│   ├── contact.js                # 폼 값·오류·성공 상태
+│   └── projects.js               # 로컬 편집 데이터 + GitHub API 병합
+├── images/projects/              # 1200 × 675 README 미리보기
+├── images/screenshots/           # 검증된 Day, mobile, Night 화면
 └── docs/learning/                # 설계 결정, 체크포인트, 학습 현황
 ```
 
-애플리케이션 라이브러리, CSS 프레임워크, 번들러 없이 최신 브라우저가 원본 파일을 직접 실행합니다. 각 스크립트는 `defer`와 IIFE를 사용해 HTML 파싱 이후 독립적으로 초기화됩니다.
+각 스크립트는 `defer` 된 IIFE로 독립적으로 초기화됩니다. 빌드 도구가 없어 브라우저가 원본 HTML, CSS, JavaScript를 그대로 요청하고 실행합니다.
+
+### 프로젝트 데이터 흐름
+
+`projects.js`는 로컬의 안정적인 기사 순서·감상·이미지와 GitHub API의 변할 수 있는 설명·언어·별·업데이트 시각을 저장소 이름으로 합칩니다.
+
+```text
+초기 로드/재시도 → loading → GitHub 응답 → 편집 순서 merge → success | empty | error → DOM
+```
+
+화면은 `loading`, `success`, `empty`, `error` 네 요청 상태를 표현합니다. `403` 오류는 GitHub API 요청 한도 안내를 따로 보여주고, 오류 상태의 재시도 버튼은 같은 로드 함수를 다시 실행합니다. 원격 문자열은 HTML escape 후 렌더링하고, HTTPS `github.com` 이외의 URL은 안전한 프로필 링크로 바꿍니다.
+
+### Day/Night와 Send a Tip
+
+Day/Night Edition은 `<html>`의 `data-theme`이 표현의 단일 기준입니다. 선택은 `localStorage`에 저장되지만, 저장소가 막혀도 현재 페이지의 테마 전환은 계속 동작합니다.
+
+Send a Tip은 `preventDefault()` 후 브라우저에서만 필수값과 이메일 형식을 확인합니다. 서버나 이메일 서비스로 입력값을 전송하지 않으며, 성공 문구도 이 사실을 명시합니다.
 
 ## 로컬 실행
-
-VS Code에서는 프로젝트 루트를 열고 Live Server의 **Open with Live Server**를 실행합니다. 별도 확장 없이 확인하려면 다음과 같이 정적 서버를 사용할 수 있습니다.
 
 ```bash
 python3 -m http.server 4173
 ```
 
-브라우저에서 `http://localhost:4173`을 엽니다. HTML 파일을 `file://`로 직접 여는 것보다 HTTP 서버를 사용하는 편이 실제 배포와 같은 URL·요청·응답·origin 환경을 제공합니다.
-
-## 교체할 포트폴리오 정보
-
-* `index.html`의 이름, 소개, Footer, 소셜 링크를 본인 정보로 바꿉니다.
-* `images/profile-placeholder.svg`를 본인 이미지로 교체하고 `alt`, `width`, `height`를 함께 조정합니다.
-* `js/projects.js`의 `GITHUB_USERNAME`을 본인 GitHub 사용자명으로 변경합니다.
-
-현재 `GITHUB_USERNAME`은 교체가 쉬운 공개 예시 계정 `octocat`입니다. 인증 없는 GitHub API는 IP 기준 시간당 60회 제한이 있으므로 반복 새로고침 시 `403` 안내가 나타날 수 있습니다. 토큰이나 비밀 키는 브라우저 코드에 넣지 않습니다.
+`http://localhost:4173`을 엽니다. `file://` 대신 HTTP 서버를 쓰면 배포와 비슷한 URL·요청·응답·origin 환경에서 GitHub API까지 확인할 수 있습니다.
 
 ## 동작 기준값
 
 | 동작 | 기준 |
 | --- | ---: |
-| Header 스크롤 스타일 | `60px` 초과 |
-| 맨 위 버튼 표시 | `300px` 초과 |
+| Header 스크롤 스타일 | `60px` 이상 |
+| 맨 위 버튼 표시 | `300px` 이상 |
 | Intersection Observer | `0.2` |
 | 태블릿 breakpoint | `768px` |
 | 데스크톱 breakpoint | `1024px` |
-| GitHub 저장소 표시 수 | `6` |
+| GitHub API 요청 상한 | `100` repositories |
 
 ## 검증
 
@@ -66,32 +73,35 @@ for file in js/*.js; do node --check "$file"; done
 git diff --check
 rg -n "onclick=|oninput=|onsubmit=|style=" index.html js css
 rg -n "\\bvar\\b" index.html js
+rg -n "Developing Story|octocat|Kim Developer|>KD<" index.html js css
 ```
 
-브라우저에서는 다음을 확인합니다.
+2026-09-29 로컬 릴리스 후보에서 확인한 결과입니다.
 
-1. 320px, 768px, 1024px 이상에서 가로 넘침과 읽기 어려운 레이아웃이 없는지 확인합니다.
-2. 키보드만으로 링크, 메뉴, 테마, 폼, 재시도, 맨 위 버튼을 사용할 수 있는지 확인합니다.
-3. 테마 선택이 새로고침 후 유지되는지 확인합니다.
-4. 폼의 빈 값, 잘못된 이메일, 정상 제출 결과를 확인합니다.
-5. Network에서 로컬 자원과 GitHub API의 상태 및 응답을 확인합니다.
-
-로컬 Lighthouse 기준 점수는 Performance 99, Accessibility 100, SEO 100입니다. 로컬 Python 정적 서버의 캐시 정책과 응답 지연은 실제 GitHub Pages 배포 후 다시 측정합니다.
+* 320px: 단일 열, 햄버거 메뉴, 프로젝트 1열, 가로 overflow `0`
+* 768px: 주요 기사 2열, 프로젝트 2열, 데스크톱 탐색, 가로 overflow `0`
+* 1024px: `0.8fr / 1.6fr / 0.8fr` 리드 3열, 미션·프로젝트 3열, 가로 overflow `0`
+* 키보드: 모바일 메뉴, 내부 링크, 테마, 폼, 맨 위 버튼 동작
+* 프로젝트: 실제 4개, 누락, 빈 응답, 404, 403, 네트워크 거부, 재시도, 악성 문자열, 깨진 이미지
+* 접근성: `h1` 1개, 건너뛴 단계 없음, 구획 label, 이미지 alt/크기, 폼 label/description, live region
+* Night Edition 버튼 대비: 기본 `5.75:1`, hover `7.31:1`; Day Edition도 WCAG AA 통과
+* 모션 감소: media query 일치, 전환 `0.01ms`, reveal 불투명도 `1`, 위치 이동 없음
+* Lighthouse: Performance `100`, Accessibility `100`, Best Practices `100`, SEO `100`; 콘솔 오류·깨진 요청 `0`, 이미지 크기 audit 통과, CLS `0.000008`
 
 ## 배포
 
-GitHub Pages: [https://k-sungwon.github.io/web-resume-vanilla/](https://k-sungwon.github.io/web-resume-vanilla/)
+현재 GitHub Pages 주소: [https://k-sungwon.github.io/web-resume-vanilla/](https://k-sungwon.github.io/web-resume-vanilla/)
 
-`main` 브랜치의 저장소 루트를 GitHub Pages가 정적 파일로 배포합니다. HTTPS 운영 주소에서 상대 CSS/JavaScript/SVG 경로, GitHub API 카드 6개, 테마 복원, 폼 검증을 다시 확인했습니다.
+`main` 브랜치의 저장소 루트를 GitHub Pages가 HTTPS로 정적 배포합니다. 이 브랜치의 SNN 릴리스 후보는 `main`에 통합하고 Pages 배포가 완료된 뒤 운영 URL에 반영됩니다.
 
-### 데스크톱
+### Desktop · Day Edition
 
-![데스크톱 포트폴리오 화면](images/screenshots/desktop.png)
+![SNN 데스크톱 Day Edition](images/screenshots/desktop.png)
 
-### 모바일
+### Mobile · Day Edition
 
-![모바일 포트폴리오 화면](images/screenshots/mobile.png)
+![SNN 모바일 Day Edition](images/screenshots/mobile.png)
 
-### 다크 모드
+### Desktop · Night Edition
 
-![다크 모드 포트폴리오 화면](images/screenshots/dark.png)
+![SNN 데스크톱 Night Edition](images/screenshots/dark.png)
