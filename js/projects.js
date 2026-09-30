@@ -10,7 +10,7 @@
       repoName: 'web-resume-vanilla',
       displayTitle: '웹의 기본기를 다시 세운 SNN 자기소개서',
       interviewSummary: '프레임워크 없이 HTML, CSS, JavaScript의 역할을 직접 나누고, 브라우저에서 보이는 화면이 배포까지 이어지는 전 과정을 다시 확인했습니다.',
-      imageSrc: 'images/projects/web-resume-vanilla-readme.png',
+      imageSrc: 'images/projects/web-resume-vanilla-readme.png?v=2',
       imageAlt: 'web-resume-vanilla 저장소 README 상단 미리보기',
     },
     {

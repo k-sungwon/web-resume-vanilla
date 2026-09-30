@@ -509,6 +509,7 @@ Remote text is escaped before it enters `innerHTML`, and repository links are ac
 * Confirmed one `h1`, no skipped heading level, eight labelled sections, meaningful image alternatives and dimensions, form label/description relationships, and two polite live regions.
 * Added an explicit local SVG favicon after Lighthouse exposed the implicit `/favicon.ico` request as a 404 and console error.
 * Replaced the README screenshots with SNN desktop Day, mobile Day, and desktop Night captures and documented the current architecture and verified behavior.
+* Resolved independent review findings by giving Night Edition buttons a high-contrast text token and regenerating the featured project preview from the current SNN README.
 * Measured Lighthouse 100 for Performance, Accessibility, Best Practices, and SEO with no console error, failed resource, or unsized image audit failure and a CLS of `0.000008`.
 
 ### Guided Explanation

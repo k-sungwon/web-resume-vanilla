@@ -11,6 +11,7 @@
   --color-on-dark: #f7f7f7;
   --color-accent: #cc0000;
   --color-accent-strong: #9f0000;
+  --color-button-text: #ffffff;
   --color-error: #b42318;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -39,6 +40,7 @@
   --color-on-dark: #f7f7f7;
   --color-accent: #ff3b30;
   --color-accent-strong: #ff6b63;
+  --color-button-text: #050505;
   --color-error: #ffb4ab;
   --shadow: 0 0.75rem 2rem rgb(0 0 0 / 35%);
 }
@@ -326,7 +328,7 @@ form button[type='submit'],
   padding: var(--space-3) var(--space-5);
   border: 1px solid var(--color-accent);
   background: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-button-text);
   font-weight: 800;
   align-items: center;
   justify-content: center;
@@ -593,7 +595,7 @@ footer {
   }
 
   .button-secondary:hover {
-    color: #ffffff;
+    color: var(--color-button-text);
   }
 
   .project-card:hover {

@@ -84,6 +84,7 @@ rg -n "Developing Story|octocat|Kim Developer|>KD<" index.html js css
 * 키보드: 모바일 메뉴, 내부 링크, 테마, 폼, 맨 위 버튼 동작
 * 프로젝트: 실제 4개, 누락, 빈 응답, 404, 403, 네트워크 거부, 재시도, 악성 문자열, 깨진 이미지
 * 접근성: `h1` 1개, 건너뛴 단계 없음, 구획 label, 이미지 alt/크기, 폼 label/description, live region
+* Night Edition 버튼 대비: 기본 `5.75:1`, hover `7.31:1`; Day Edition도 WCAG AA 통과
 * 모션 감소: media query 일치, 전환 `0.01ms`, reveal 불투명도 `1`, 위치 이동 없음
 * Lighthouse: Performance `100`, Accessibility `100`, Best Practices `100`, SEO `100`; 콘솔 오류·깨진 요청 `0`, 이미지 크기 audit 통과, CLS `0.000008`
 

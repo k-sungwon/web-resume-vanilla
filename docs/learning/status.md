@@ -81,6 +81,9 @@ Completed
 * Lighthouse measured 100/100/100/100 with no console error, failed resource, or unsized image failure
 * SNN desktop Day, mobile Day, and desktop Night screenshots captured and visually reviewed
 * README rewritten for the SNN purpose, architecture, states, verification, and deployment boundary
+* Independent release review completed with no Critical findings
+* Night Edition button contrast corrected to 5.75:1 default and 7.31:1 hover
+* Featured repository preview regenerated from the current SNN README
 
 Next
 
