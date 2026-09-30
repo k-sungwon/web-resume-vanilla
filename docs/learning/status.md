@@ -2,11 +2,11 @@ Project Learning Status
 
 Current Milestone
 
-Milestone 9.5 / SNN release candidate verified
+Milestone 9 complete / SNN production deployed and verified
 
 Current Task
 
-Review the completed branch and choose the integration method before redeployment.
+Use the completed SNN site as the concrete example for learner-led code reading and the end-to-end web delivery review.
 
 Completed
 
@@ -84,18 +84,25 @@ Completed
 * Independent release review completed with no Critical findings
 * Night Edition button contrast corrected to 5.75:1 default and 7.31:1 hover
 * Featured repository preview regenerated from the current SNN README
+* Feature branch published and reviewed in GitHub Pull Request #3
+* Pull Request #3 merged into remote `main` as merge commit `d383b38`
+* Local `main` fast-forwarded to the remote merge commit
+* GitHub Pages enabled from the `main` repository root
+* Public SNN URL verified over HTTPS: `https://k-sungwon.github.io/web-resume-vanilla/`
+* Production GitHub data, theme persistence, form validation, mobile menu, and console state verified
 
 Next
 
-1. Review the completed branch
-2. Choose whether to merge, push/PR, or keep the branch before redeployment
-3. Verify the public Pages URL only after the selected integration
+1. Trace the HTML → CSS → JavaScript loading and rendering path in the completed site
+2. Trace the menu, theme, projects, and form event → state → render flows in the actual code
+3. Replace the remaining profile placeholder or selected content as a learner-led edit
+4. Revisit the recorded design decisions and the static-site → framework/tooling evolution when the code review is complete
 
 Learning NOW
 
-* Mapping news-editorial meaning to semantic HTML
+* Source → commit → branch → Pull Request → merge → Pages deployment
+* HTML request → dependent CSS/JavaScript/image requests → DOM/CSSOM → pixels
 * Separating static personal content from live GitHub metadata
-* Reviewing evidence before branch integration and redeployment
 
 Learning CHECKPOINT
 
@@ -103,6 +110,7 @@ Learning CHECKPOINT
 * Article document order versus responsive visual order
 * Local editorial data + GitHub API response → merged project article
 * Theme, projects, and contact event → state → render traces
+* Pull Request review, merge commit, deployment source, and production verification
 
 Learning LATER
 

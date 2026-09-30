@@ -517,3 +517,22 @@ Remote text is escaped before it enters `innerHTML`, and repository links are ac
 The release review follows the same path as the running web: source files are parsed and requested, CSS creates layout and themes, JavaScript connects events to state and DOM updates, and external GitHub data joins the local article model. Static checks catch source-level mistakes; browser matrices catch viewport and interaction mistakes; Lighthouse observes the integrated result.
 
 The deployment chain remains `source → Git commit → GitHub main → Pages → DNS → TLS → HTTP → DOM/CSSOM → layout/paint → pixels`. This branch has completed the source-to-local-browser portion. The public Pages result must be checked only after the user chooses and completes branch integration.
+
+⸻
+
+## Milestone 9.6 — SNN production integration and deployment
+
+### What Changed
+
+* Pushed `codex/snn-news-resume` and opened GitHub Pull Request #3 with the implementation and verification evidence.
+* Merged the pull request into remote `main` as merge commit `d383b38` and fast-forwarded the local `main` to the same commit.
+* Enabled GitHub Pages with `main` and `/(root)` as its publishing source.
+* Verified the public HTTPS site at `https://k-sungwon.github.io/web-resume-vanilla/` on 2026-09-30.
+* Confirmed the SNN document title and sections, four live GitHub project articles, persisted Night Edition, required empty-form errors, and the mobile menu at 390 × 844.
+* Confirmed that the tested production flows produced no browser console errors.
+
+### Guided Explanation
+
+The deployed page is not a separate copy written by hand. GitHub Pages selects the files from the configured `main` branch and publishes them as static HTTPS responses. The browser first requests `index.html`, discovers the relative CSS, JavaScript, image, and favicon URLs, requests those resources, builds the DOM and CSSOM, performs layout and paint, and then runs the scripts that attach event handlers and request GitHub API data.
+
+The Pull Request did not deploy the site by itself. It provided a review and integration boundary. Merging changed the remote `main` history, while the Pages source setting told GitHub which branch and folder should become the public site. Production verification then checked the delivered result rather than assuming that a successful Git operation meant the browser-visible system worked.

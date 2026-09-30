@@ -92,7 +92,7 @@ rg -n "Developing Story|octocat|Kim Developer|>KD<" index.html js css
 
 현재 GitHub Pages 주소: [https://k-sungwon.github.io/web-resume-vanilla/](https://k-sungwon.github.io/web-resume-vanilla/)
 
-`main` 브랜치의 저장소 루트를 GitHub Pages가 HTTPS로 정적 배포합니다. 이 브랜치의 SNN 릴리스 후보는 `main`에 통합하고 Pages 배포가 완료된 뒤 운영 URL에 반영됩니다.
+`main` 브랜치의 저장소 루트를 GitHub Pages가 HTTPS로 정적 배포합니다. SNN redesign은 Pull Request #3으로 `main`에 병합했으며, 2026-09-30 운영 URL에서 제목·상대 경로 자산·GitHub 프로젝트 데이터·테마 지속성·폼 검증·모바일 메뉴와 콘솔 오류 없음을 확인했습니다.
 
 ### Desktop · Day Edition
 
